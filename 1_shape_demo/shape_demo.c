@@ -14,6 +14,7 @@ void main()
   // clear the screen in case something is already on there
   clearScreen(COLOR_BLUE);
 
+  border();
   draw_rectangle();
   draw_triangle();
   draw_circle();

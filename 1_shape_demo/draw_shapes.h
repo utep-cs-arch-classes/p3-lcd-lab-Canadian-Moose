@@ -1,6 +1,8 @@
 #ifndef _DRAW_SHAPES_H_
 #define _DRAW_SHAPES_H_
 
+void border(void);
+
 /* draws a rectangle */
 void draw_rectangle(void);
 /* draws an equaleral triangle by starting at the top with a 

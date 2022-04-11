@@ -2,6 +2,18 @@
 #include "lcdutils.h"
 #include "lcddraw.h"
 
+void border(void){
+  int colMin = 0;
+  int rowMin = 0;
+  int width = 127;
+  int height = 159;
+  int color = COLOR_ORANGE;
+  
+  drawRectOutline(colMin, rowMin, width, height, color);
+  drawRectOutline(colMin+1, rowMin+1, width-2, height-2, color);
+}
+
+
 void
 draw_rectangle(void)
 {
