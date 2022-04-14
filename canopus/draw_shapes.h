@@ -3,6 +3,7 @@
 
 #include <lcdutils.h>
 
+/*
 typedef struct rect_st {
   int rect_row;
   int rect_col;
@@ -19,30 +20,35 @@ typedef struct cir_st {
   int old_cir_y;
   int r;
 } circle;
-
+*/
 extern u_int background_color;
 
 /* initializes shape positions */
 void init_shapes(void);
 
+// safe zones
+void safeZones(void);
+//roads
+void roads(void);
+
 /* handles erasing and updating all the shapes */
-void draw_moving_shapes(void);
+//void draw_moving_shapes(void);
 
 /* handles a single rectangle, updates its 
    position and draws it at its new location */
-void moving_rectangle(rectangle* to_draw);
+//void moving_rectangle(rectangle* to_draw);
 
 /* handles a single circle, updates its 
    position and draws it at its new location */
-void moving_circle(void);
+//void moving_circle(void);
 
 /* draws a rectangle */
-void draw_rectangle(void);
+//void draw_rectangle(void);
 
 /* draws a triangle */
-void draw_triangle(void);
+//void draw_triangle(void);
 
 /* draws a circle with the given parameters */
-void draw_circle(int x, int y, int r, u_int color);
+//void draw_circle(int x, int y, int r, u_int color);
 
 #endif // _DRAW_SHAPES_H_

@@ -17,6 +17,43 @@ circle cir1;
 
 u_int background_color = COLOR_BLUE;
 
+void safeZones(void){
+  int startCol = 0;
+  int startRow = 128;
+  int endCol = 0;
+  int endRow = 0;
+  int height = 32;
+  int width = 128;
+  int color = COLOR_PALE_GREEN;
+
+  fillRectangle(startCol, startRow, width, height, color);
+  fillRectangle(endCol, endRow, width, height, color);
+}
+
+void roads(void){
+  int laneCol = 0;
+  int lane1row = 97;
+  int lane2row = 65;
+  int lane3row = 32;
+  int divider1row = 95;
+  int divider2row = 63;
+  int dividerCol = 0;
+  int dividerHeight = 2;
+  int height = 32;
+  int width = 128;
+  int colorRoad = COLOR_GRAY;
+  int colorDivider = COLOR_YELLOW;
+
+  fillRectangle(laneCol, lane3row, width, height, colorRoad);
+  fillRectangle(laneCol, lane2row, width, height, colorRoad);
+  fillRectangle(laneCol, lane1row, width, height, colorRoad);
+  fillRectangle(dividerCol, divider2row, width, dividerHeight, colorDivider);
+  fillRectangle(dividerCol, divider1row, width, dividerHeight, colorDivider);
+}
+
+
+
+/*
 void
 init_shapes(void)
 {
@@ -217,5 +254,5 @@ moving_circle(void)
        ( cir1.cir_y + cir1.r ) >= screenHeight ) { // right boundary
     // right or left hit, reverse y velocity
     y_vel = y_vel * -1;
-  }
+  }*/
 }
