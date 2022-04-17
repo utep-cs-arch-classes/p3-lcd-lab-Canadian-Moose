@@ -3,26 +3,30 @@
 #include "lcddraw.h"
 #include "draw_shapes.h"
 
-// global vars for the rectangle
-//rectangle rect1;
-/* int rect_row, rect_col; */
-/* int old_rect_row, old_rect_col; */
-/* u_char height, width; */
-
-// global vars for the circle
-/* int cir_y, cir_x; */
-/* int old_cir_y, old_cir_x; */
-/* int r; */
-//circle cir1;
+/* global vars for the shape positions */
+//frog
+int frogColStart = 58;
+int frogRowStart = 132;
+//lane 1
+int lane1colStart = 56;
+int lane1rowStart = 102;
+//lane 3
+int lane3colStart1 = 6;
+int lane3colStart2 = 83;
+int lane3rowStart = 37;
+//lane 2
+int lane2colStart1 = 17;
+int lane2colStart2 = 86;
+int lane2rowStart = 76;
 
 u_int background_color = COLOR_BLUE;
 
-/* global variables for wheel sizes */
-  int wheelh1 = 5;
-  int wheelw1 = 3;
-  int wheelh2 = 3;
-  int wheelw2 = 5;
-  int colorWheel = COLOR_BLACK;
+/* global constant variables for wheel sizes/ color */
+const int wheelh1 = 5;
+const int wheelw1 = 3;
+const int wheelh2 = 3;
+const int wheelw2 = 5;
+const int colorWheel = COLOR_BLACK;
 
 void init_shapes(void){
   safeZones();
@@ -104,8 +108,6 @@ void heart3(void){
 }
 
 void frog(void){
-  int colStart = 58;
-  int rowStart = 132;
   int headWidth = 4;
   int headHeight = 2;
   int bodyWidth = 6;
@@ -115,31 +117,29 @@ void frog(void){
   int color = COLOR_DARK_GREEN;
 
   //body
-  fillRectangle(colStart+4, rowStart, headWidth, headHeight, color);
-  fillRectangle(colStart+3, rowStart+2, bodyWidth, bodyHeight, color);
-  fillRectangle(colStart+4, rowStart+10, headWidth, headHeight, color);
+  fillRectangle(frogColStart+4, frogRowStart, headWidth, headHeight, color);
+  fillRectangle(frogColStart+3, frogRowStart+2, bodyWidth, bodyHeight, color);
+  fillRectangle(frogColStart+4, frogRowStart+10, headWidth, headHeight, color);
   //legs
-  fillRectangle(colStart+1, rowStart, 1, legHeight, color);
-  fillRectangle(colStart+10, rowStart, 1, legHeight, color);
-  fillRectangle(colStart+1, rowStart+8, 1, legHeight, color);
-  fillRectangle(colStart+10, rowStart+8, 1, legHeight, color);
+  fillRectangle(frogColStart+1, frogRowStart, 1, legHeight, color);
+  fillRectangle(frogColStart+10, frogRowStart, 1, legHeight, color);
+  fillRectangle(frogColStart+1, frogRowStart+8, 1, legHeight, color);
+  fillRectangle(frogColStart+10, frogRowStart+8, 1, legHeight, color);
   //other leg pixels
-  drawPixel(colStart+2, rowStart+3, color);
-  drawPixel(colStart+9, rowStart+3, color);
-  drawPixel(colStart+2, rowStart+8, color);
-  drawPixel(colStart+2, rowStart+9, color);
-  drawPixel(colStart+9, rowStart+8, color);
-  drawPixel(colStart+9, rowStart+9, color);
-  drawPixel(colStart+2, rowStart+7, color);
-  drawPixel(colStart+9, rowStart+7, color);
+  drawPixel(frogColStart+2, frogRowStart+3, color);
+  drawPixel(frogColStart+9, frogRowStart+3, color);
+  drawPixel(frogColStart+2, frogRowStart+8, color);
+  drawPixel(frogColStart+2, frogRowStart+9, color);
+  drawPixel(frogColStart+9, frogRowStart+8, color);
+  drawPixel(frogColStart+9, frogRowStart+9, color);
+  drawPixel(frogColStart+2, frogRowStart+7, color);
+  drawPixel(frogColStart+9, frogRowStart+7, color);
   //peets
-  drawPixel(colStart, rowStart+11, color);
-  drawPixel(colStart+11, rowStart+11, color);
+  drawPixel(frogColStart, frogRowStart+11, color);
+  drawPixel(frogColStart+11, frogRowStart+11, color);
 }
 
 void lane1(void){
-  int colStart = 56;
-  int rowStart = 102;
   int backHeight = 18;
   int backWidth = 30;
   int cabHeight = 11;
@@ -148,30 +148,27 @@ void lane1(void){
   int colorTruck = COLOR_PURPLE;
 
   //truck
-  fillRectangle(colStart, rowStart, backWidth, backHeight, colorTruck);
-  fillRectangle(colStart+31, rowStart+7, cabWidth, cabHeight, colorTruck);
-  fillRectangle(colStart+30, rowStart+14, 1, connectorHeight, colorTruck);
+  fillRectangle(lane1colStart, lane1rowStart, backWidth, backHeight, colorTruck);
+  fillRectangle(lane1colStart+31, lane1rowStart+7, cabWidth, cabHeight, colorTruck);
+  fillRectangle(lane1colStart+30, lane1rowStart+14, 1, connectorHeight, colorTruck);
   //wheel 1
-  fillRectangle(colStart+3, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart+2, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane1colStart+3, lane1rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane1colStart+2, lane1rowStart+17, wheelw2, wheelh2, colorWheel);
   //wheel 2
-  fillRectangle(colStart+10, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart+9, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane1colStart+10, lane1rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane1colStart+9, lane1rowStart+17, wheelw2, wheelh2, colorWheel);
   //wheel 3
-  fillRectangle(colStart+17, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart+16, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane1colStart+17, lane1rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane1colStart+16, lane1rowStart+17, wheelw2, wheelh2, colorWheel);
   //wheel 4
-  fillRectangle(colStart+24, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart+23, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane1colStart+24, lane1rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane1colStart+23, lane1rowStart+17, wheelw2, wheelh2, colorWheel);
   //wheel 5
-  fillRectangle(colStart+34, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart+33, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane1colStart+34, lane1rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane1colStart+33, lane1rowStart+17, wheelw2, wheelh2, colorWheel);
 }
 
 void lane3(void){
-  int colStart1 = 6;
-  int colStart2 = 83;
-  int rowStart = 37;
   int backHeight = 18;
   int backWidth = 30;
   int cabHeight = 11;
@@ -180,50 +177,47 @@ void lane3(void){
   int colorTruck = COLOR_ORANGE;
 
   //truck 1
-  fillRectangle(colStart1+10, rowStart, backWidth, backHeight, colorTruck);
-  fillRectangle(colStart1, rowStart+7, cabWidth, cabHeight, colorTruck);
-  fillRectangle(colStart1+9, rowStart+14, 1, connectorHeight, colorTruck);
+  fillRectangle(lane3colStart1+10, lane3rowStart, backWidth, backHeight, colorTruck);
+  fillRectangle(lane3colStart1, lane3rowStart+7, cabWidth, cabHeight, colorTruck);
+  fillRectangle(lane3colStart1+9, lane3rowStart+14, 1, connectorHeight, colorTruck);
   //wheel 1
-  fillRectangle(colStart1+3, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart1+2, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane3colStart1+3, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane3colStart1+2, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
   //wheel 2
-  fillRectangle(colStart1+13, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart1+12, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane3colStart1+13, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane3colStart1+12, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
   //wheel 3
-  fillRectangle(colStart1+20, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart1+19, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane3colStart1+20, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane3colStart1+19, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
   //wheel 4
-  fillRectangle(colStart1+27, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart1+26, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane3colStart1+27, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane3colStart1+26, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
   //wheel 5
-  fillRectangle(colStart1+34, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart1+33, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane3colStart1+34, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane3colStart1+33, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
 
   //truck 2
-  fillRectangle(colStart2+10, rowStart, backWidth, backHeight, colorTruck);
-  fillRectangle(colStart2, rowStart+7, cabWidth, cabHeight, colorTruck);
-  fillRectangle(colStart2+9, rowStart+14, 1, connectorHeight, colorTruck);
+  fillRectangle(lane3colStart2+10, lane3rowStart, backWidth, backHeight, colorTruck);
+  fillRectangle(lane3colStart2, lane3rowStart+7, cabWidth, cabHeight, colorTruck);
+  fillRectangle(lane3colStart2+9, lane3rowStart+14, 1, connectorHeight, colorTruck);
   //wheel 1
-  fillRectangle(colStart2+3, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart2+2, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane3colStart2+3, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane3colStart2+2, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
   //wheel 2
-  fillRectangle(colStart2+13, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart2+12, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane3colStart2+13, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane3colStart2+12, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
   //wheel 3
-  fillRectangle(colStart2+20, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart2+19, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane3colStart2+20, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane3colStart2+19, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
   //wheel 4
-  fillRectangle(colStart2+27, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart2+26, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane3colStart2+27, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane3colStart2+26, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
   //wheel 5
-  fillRectangle(colStart2+34, rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart2+33, rowStart+17, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane3colStart2+34, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane3colStart2+33, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
 }
 
 void lane2(void){
-  int colStart1 = 17;
-  int colStart2 = 86;
-  int rowStart = 76;
   int topHeight = 5;
   int topWidth = 16;
   int botHeight = 5;
@@ -231,229 +225,22 @@ void lane2(void){
   int colorCar = COLOR_BLUE;
 
   //car 1
-  fillRectangle(colStart1+5, rowStart, topWidth, topHeight, colorCar);
-  fillRectangle(colStart1, rowStart+5, botWidth, botHeight, colorCar);
+  fillRectangle(lane2colStart1+5, lane2rowStart, topWidth, topHeight, colorCar);
+  fillRectangle(lane2colStart1, lane2rowStart+5, botWidth, botHeight, colorCar);
   //wheel 1
-  fillRectangle(colStart1+5, rowStart+8, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart1+4, rowStart+9, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane2colStart1+5, lane2rowStart+8, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane2colStart1+4, lane2rowStart+9, wheelw2, wheelh2, colorWheel);
   // wheel 2
-  fillRectangle(colStart1+18, rowStart+8, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart1+17, rowStart+9, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane2colStart1+18, lane2rowStart+8, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane2colStart1+17, lane2rowStart+9, wheelw2, wheelh2, colorWheel);
 
   //car 2
-  fillRectangle(colStart2+5, rowStart, topWidth, topHeight, colorCar);
-  fillRectangle(colStart2, rowStart+5, botWidth, botHeight, colorCar);
+  fillRectangle(lane2colStart2+5, lane2rowStart, topWidth, topHeight, colorCar);
+  fillRectangle(lane2colStart2, lane2rowStart+5, botWidth, botHeight, colorCar);
   //wheel 1
-  fillRectangle(colStart2+5, rowStart+8, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart2+4, rowStart+9, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane2colStart2+5, lane2rowStart+8, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane2colStart2+4, lane2rowStart+9, wheelw2, wheelh2, colorWheel);
   // wheel 2
-  fillRectangle(colStart2+18, rowStart+8, wheelw1, wheelh1, colorWheel);
-  fillRectangle(colStart2+17, rowStart+9, wheelw2, wheelh2, colorWheel);
+  fillRectangle(lane2colStart2+18, lane2rowStart+8, wheelw1, wheelh1, colorWheel);
+  fillRectangle(lane2colStart2+17, lane2rowStart+9, wheelw2, wheelh2, colorWheel);
 }
-
-
-
-
-/*
-void
-init_shapes(void)
-{
-  // vars for the rectangle
-  rect1.rect_row = 40;
-  rect1.rect_col = screenWidth / 2;
-  rect1.old_rect_row = 40;
-  rect1.old_rect_col = screenWidth / 2;
-  rect1.height = 10;
-  rect1.width  = 60;
-
-  // vars for the circle
-  cir1.cir_y = 60;
-  cir1.cir_x = screenWidth / 2;
-  cir1.old_cir_y = 60;
-  cir1.old_cir_x = screenWidth / 2;
-  cir1.r = 20;
-}
-
-void
-draw_moving_shapes(void)
-{
-  int left_col = rect1.old_rect_col - (rect1.width / 2);
-  int top_row  = rect1.old_rect_row - (rect1.height / 2);
-
-  // blank out the old rectangle
-  fillRectangle(left_col, top_row, rect1.width, rect1.height, background_color);
-
-  // blank out the old circle
-  draw_circle(cir1.old_cir_x, cir1.old_cir_y, cir1.r, background_color);
-
-  // draw and update the rectangle
-  moving_rectangle(&rect1);
-  
-  // draw and update the circle
-  moving_circle();
-
-  // draw the triangle
-  draw_triangle();
-}
-
-void
-draw_rectangle(void)
-{
-  int left_col = rect1.rect_col - (rect1.width / 2);
-  int top_row  = rect1.rect_row - (rect1.height / 2);
-
-  unsigned int blue = 16, green = 0, red = 31;
-  unsigned int color = (blue << 11) | (green << 5) | red;
-
-  fillRectangle(left_col, top_row, rect1.width, rect1.height, color);
-}
-
-
-void
-moving_rectangle(rectangle *to_draw)
-{
-  static int x_vel = 10;
-  static int y_vel = 5;
-
-  int left_col = to_draw->rect_col - (to_draw->width / 2);
-  int top_row  = to_draw->rect_row - (to_draw->height / 2);
-
-  unsigned int blue = 16, green = 0, red = 31;
-  unsigned int color = (blue << 11) | (green << 5) | red;
-
-  // draw rectangle at current position
-  fillRectangle(left_col, top_row, to_draw->width, to_draw->height, color);
-
-  // save current position
-  to_draw->old_rect_row = to_draw->rect_row;
-  to_draw->old_rect_col = to_draw->rect_col;
-
-  // update position
-  to_draw->rect_row += y_vel;
-  to_draw->rect_col += x_vel;
-
-  // check boundaries, see if rectangle has hit the edges
-  if ( ( to_draw->rect_col - (to_draw->width / 2) ) <= 0 ||            // left boundary
-       ( to_draw->rect_col + (to_draw->width / 2) ) >= screenWidth ) { // right boundary
-    // right or left hit, reverse x velocity
-    x_vel = x_vel * -1;
-  }
-  if ( (to_draw->rect_row + to_draw->height / 2) >= screenHeight ||   // bottom
-       (to_draw->rect_row - to_draw->height / 2) <= 0) {              // top
-    // top or bottom hit, reverse y velocity
-    y_vel = y_vel * -1;
-  }
-
-}
-
-
-void
-draw_triangle(void)
-{
-  u_char height = 40;
-  u_char row = 80, col = screenWidth / 2;
-
-  u_char step = 0;
-
-  unsigned int blue = 31, green = 0, red = 31;
-
-  unsigned int color = (blue << 11) | (green << 5) | red;
-
-  // draw a n equilateral triangle
-  // starts at the top and works down
-  // at the first row the width is 1, second 2 and so on
-  for (step = 0; step < height; step++) {
-    // left side of triangle
-    u_char start_col = col - (step / 2);
-    // right side of triangle
-    u_char end_col   = col + (step / 2);
-    u_char width     = end_col - start_col;
-    fillRectangle(col - (step / 2), row+step, width, 1, color);
-  }
-}
-
-void
-drawHorizontalLine(u_int x_start, u_int x_end, u_int y, u_int colorBGR)
-{
-  u_int length = x_end - x_start;
-  // set the draw area from the start of the line to the end
-  // height is 1 since its a line
-  lcd_setArea(x_start, y, x_end, y);
-  for (u_int i = 0; i < length; i++) {
-    lcd_writeColor(colorBGR);
-  }
-  
-}
-
-void
-drawLines(u_int x_coord, u_int y_coord, u_int x_point, u_int y_point, u_int color)
-{
-  // bottom
-  drawHorizontalLine(x_coord - x_point, x_coord + x_point, y_coord + y_point, color);
-  // top
-  drawHorizontalLine(x_coord - x_point, x_coord + x_point, y_coord - y_point, color);
-  // and the middle two
-  drawHorizontalLine(x_coord - y_point, x_coord + y_point, y_coord + x_point, color);
-  drawHorizontalLine(x_coord - y_point, x_coord + y_point, y_coord - x_point, color);
-					  
-}
-
-void
-draw_circle(int x, int y, int r, u_int color)
-{
-  int x_coord = x;
-  int y_coord = y;
-  // first point will be the very top;
-  int x_point = 0;
-  int y_point = r;
-  int decision = 3 - (2 * r);
-
-  drawLines(x_coord, y_coord, x_point, y_point, color);
-
-  while (y_point >= x_point) {
-    // move x over one
-    x_point++;
-
-    // check decision point
-    if (decision > 0) {
-      // move y down one
-      y_point--;
-      decision = decision + 4 * (x_point - y_point) + 10;
-    } else {
-      decision = decision + 4 * x_point + 6;
-    }
-    drawLines(x_coord, y_coord, x_point, y_point, color);
-  }
-}
-
-void
-moving_circle(void)
-{
-  static int x_vel = 5;
-  static int y_vel = 10;
-  
-  u_int color = COLOR_SIENNA;
-
-
-  // draw at the new position
-  draw_circle(cir1.cir_x, cir1.cir_y, cir1.r, color);
-
-  // save current position
-  cir1.old_cir_x = cir1.cir_x;
-  cir1.old_cir_y = cir1.cir_y;
-
-  // update position
-  cir1.cir_x += x_vel;
-  cir1.cir_y += y_vel;
-  
-  // check boundaries, see if rectangle has hit the edges
-  if ( (cir1.cir_x + cir1.r) >= screenWidth || (cir1.cir_x - cir1.r) <= 0) {
-    // top or bottom hit, reverse x velocity
-    x_vel = x_vel * -1;
-  }
-  if ( ( cir1.cir_y - cir1.r ) <= 0 ||            // left boundary
-       ( cir1.cir_y + cir1.r ) >= screenHeight ) { // right boundary
-    // right or left hit, reverse y velocity
-    y_vel = y_vel * -1;
-  }
-}*/
