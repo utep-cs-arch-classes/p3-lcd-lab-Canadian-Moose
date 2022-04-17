@@ -31,34 +31,17 @@ void safeZones(void);
 //roads
 void roads(void);
 //hearts
-void heart1(void);
-void heart2(void);
-void heart3(void);
+void heart1(int colorHeart);
+void heart2(int colorHeart);
+void heart3(int colorHeart);
 //frog
-void frog(void);
+void frog(int colorFrog);
 // vehicles
-void lane1(void);
-void lane2(void);
-void lane3(void);
+void lane1(int colorTruck, int colorWheel);
+void lane2(int colorCar, int colorWheel);
+void lane3(int colorTruck, int colorWheel);
 
 /* handles erasing and updating all the shapes */
-//void draw_moving_shapes(void);
-
-/* handles a single rectangle, updates its 
-   position and draws it at its new location */
-//void moving_rectangle(rectangle* to_draw);
-
-/* handles a single circle, updates its 
-   position and draws it at its new location */
-//void moving_circle(void);
-
-/* draws a rectangle */
-//void draw_rectangle(void);
-
-/* draws a triangle */
-//void draw_triangle(void);
-
-/* draws a circle with the given parameters */
-//void draw_circle(int x, int y, int r, u_int color);
+void draw_moving_shapes(void);
 
 #endif // _DRAW_SHAPES_H_
