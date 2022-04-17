@@ -4,40 +4,46 @@
 #include "draw_shapes.h"
 
 /* global vars for the shape positions */
+//hearts 
+int heartColor = COLOR_RED;
 //frog
+int frogColor = COLOR_DARK_GREEN;
 int frogColStart = 58;
 int frogRowStart = 132;
 //lane 1
+int truckColor1 = COLOR_PURPLE;
 int lane1colStart = 56;
 int lane1rowStart = 102;
 //lane 3
+int truckColor3 = COLOR_ORANGE;
 int lane3colStart1 = 6;
 int lane3colStart2 = 83;
 int lane3rowStart = 37;
 //lane 2
+int carColor2 = COLOR_BLUE;
 int lane2colStart1 = 17;
 int lane2colStart2 = 86;
 int lane2rowStart = 76;
 
-u_int background_color = COLOR_BLUE;
+u_int background_color = COLOR_GRAY;
 
 /* global constant variables for wheel sizes/ color */
 const int wheelh1 = 5;
 const int wheelw1 = 3;
 const int wheelh2 = 3;
 const int wheelw2 = 5;
-const int colorWheel = COLOR_BLACK;
+const int wheelColor = COLOR_BLACK;
 
 void init_shapes(void){
   safeZones();
   roads();
-  heart1();
-  heart2();
-  heart3();
-  frog();
-  lane3();
-  lane2();
-  lane1();
+  heart1(heartColor);
+  heart2(heartColor);
+  heart3(heartColor);
+  frog(frogColor);
+  lane3(carColor2, wheelColor);
+  lane2(truckColor3, wheelColor);
+  lane1(truckColor1, wheelColor);
 }
 
 void safeZones(void){
@@ -54,98 +60,84 @@ void safeZones(void){
 }
 
 void roads(void){
-  int laneCol = 0;
-  int lane1row = 97;
-  int lane2row = 65;
-  int lane3row = 32;
   int divider1row = 95;
   int divider2row = 63;
   int dividerCol = 0;
   int dividerHeight = 2;
-  int height = 32;
   int width = 128;
-  int colorRoad = COLOR_GRAY;
   int colorDivider = COLOR_YELLOW;
 
-  fillRectangle(laneCol, lane3row, width, height, colorRoad);
-  fillRectangle(laneCol, lane2row, width, height, colorRoad);
-  fillRectangle(laneCol, lane1row, width, height, colorRoad);
   fillRectangle(dividerCol, divider2row, width, dividerHeight, colorDivider);
   fillRectangle(dividerCol, divider1row, width, dividerHeight, colorDivider);
 }
 
-void heart1(void){
+void heart1(int colorHeart){
   int rowStart = 2;
   int colStart = 107;
-  int color = COLOR_RED;
 
-  fillRectangle(colStart, rowStart, 2, 2, color);
-  fillRectangle(colStart+3, rowStart, 2, 2, color);
-  fillRectangle(colStart+1, rowStart+1, 3, 2, color);
-  fillRectangle(colStart+2, rowStart+3, 1, 1, color);
+  fillRectangle(colStart, rowStart, 2, 2, colorHeart);
+  fillRectangle(colStart+3, rowStart, 2, 2, colorHeart);
+  fillRectangle(colStart+1, rowStart+1, 3, 2, colorHeart);
+  fillRectangle(colStart+2, rowStart+3, 1, 1, colorHeart);
 }
 
-void heart2(void){
+void heart2(int colorHeart){
   int rowStart = 2;
   int colStart = 114;
-  int color = COLOR_RED;
 
-  fillRectangle(colStart, rowStart, 2, 2, color);
-  fillRectangle(colStart+3, rowStart, 2, 2, color);
-  fillRectangle(colStart+1, rowStart+1, 3, 2, color);
-  fillRectangle(colStart+2, rowStart+3, 1, 1, color);
+  fillRectangle(colStart, rowStart, 2, 2, colorHeart);
+  fillRectangle(colStart+3, rowStart, 2, 2, colorHeart);
+  fillRectangle(colStart+1, rowStart+1, 3, 2, colorHeart);
+  fillRectangle(colStart+2, rowStart+3, 1, 1, colorHeart);
 }
 
-void heart3(void){
+void heart3(int colorHeart){
   int rowStart = 2;
   int colStart = 121;
-  int color = COLOR_RED;
 
-  fillRectangle(colStart, rowStart, 2, 2, color);
-  fillRectangle(colStart+3, rowStart, 2, 2, color);
-  fillRectangle(colStart+1, rowStart+1, 3, 2, color);
-  fillRectangle(colStart+2, rowStart+3, 1, 1, color);
+  fillRectangle(colStart, rowStart, 2, 2, colorHeart);
+  fillRectangle(colStart+3, rowStart, 2, 2, colorHeart);
+  fillRectangle(colStart+1, rowStart+1, 3, 2, colorHeart);
+  fillRectangle(colStart+2, rowStart+3, 1, 1, colorHeart);
 }
 
-void frog(void){
+void frog(int colorFrog){
   int headWidth = 4;
   int headHeight = 2;
   int bodyWidth = 6;
   int bodyHeight = 8;
   int tailWidth = 4;  //height = 1
   int legHeight = 4;
-  int color = COLOR_DARK_GREEN;
 
   //body
-  fillRectangle(frogColStart+4, frogRowStart, headWidth, headHeight, color);
-  fillRectangle(frogColStart+3, frogRowStart+2, bodyWidth, bodyHeight, color);
-  fillRectangle(frogColStart+4, frogRowStart+10, headWidth, headHeight, color);
+  fillRectangle(frogColStart+4, frogRowStart, headWidth, headHeight, colorFrog);
+  fillRectangle(frogColStart+3, frogRowStart+2, bodyWidth, bodyHeight, colorFrog);
+  fillRectangle(frogColStart+4, frogRowStart+10, headWidth, headHeight, colorFrog);
   //legs
-  fillRectangle(frogColStart+1, frogRowStart, 1, legHeight, color);
-  fillRectangle(frogColStart+10, frogRowStart, 1, legHeight, color);
-  fillRectangle(frogColStart+1, frogRowStart+8, 1, legHeight, color);
-  fillRectangle(frogColStart+10, frogRowStart+8, 1, legHeight, color);
+  fillRectangle(frogColStart+1, frogRowStart, 1, legHeight, colorFrog);
+  fillRectangle(frogColStart+10, frogRowStart, 1, legHeight, colorFrog);
+  fillRectangle(frogColStart+1, frogRowStart+8, 1, legHeight, colorFrog);
+  fillRectangle(frogColStart+10, frogRowStart+8, 1, legHeight, colorFrog);
   //other leg pixels
-  drawPixel(frogColStart+2, frogRowStart+3, color);
-  drawPixel(frogColStart+9, frogRowStart+3, color);
-  drawPixel(frogColStart+2, frogRowStart+8, color);
-  drawPixel(frogColStart+2, frogRowStart+9, color);
-  drawPixel(frogColStart+9, frogRowStart+8, color);
-  drawPixel(frogColStart+9, frogRowStart+9, color);
-  drawPixel(frogColStart+2, frogRowStart+7, color);
-  drawPixel(frogColStart+9, frogRowStart+7, color);
+  drawPixel(frogColStart+2, frogRowStart+3, colorFrog);
+  drawPixel(frogColStart+9, frogRowStart+3, colorFrog);
+  drawPixel(frogColStart+2, frogRowStart+8, colorFrog);
+  drawPixel(frogColStart+2, frogRowStart+9, colorFrog);
+  drawPixel(frogColStart+9, frogRowStart+8, colorFrog);
+  drawPixel(frogColStart+9, frogRowStart+9, colorFrog);
+  drawPixel(frogColStart+2, frogRowStart+7, colorFrog);
+  drawPixel(frogColStart+9, frogRowStart+7, colorFrog);
   //peets
-  drawPixel(frogColStart, frogRowStart+11, color);
-  drawPixel(frogColStart+11, frogRowStart+11, color);
+  drawPixel(frogColStart, frogRowStart+11, colorFrog);
+  drawPixel(frogColStart+11, frogRowStart+11, colorFrog);
 }
 
-void lane1(void){
+void lane1(int colorTruck, int colorWheel){
   int backHeight = 18;
   int backWidth = 30;
   int cabHeight = 11;
   int cabWidth = 9;
   int connectorHeight = 4; //width 1
-  int colorTruck = COLOR_PURPLE;
 
   //truck
   fillRectangle(lane1colStart, lane1rowStart, backWidth, backHeight, colorTruck);
@@ -168,13 +160,12 @@ void lane1(void){
   fillRectangle(lane1colStart+33, lane1rowStart+17, wheelw2, wheelh2, colorWheel);
 }
 
-void lane3(void){
+void lane3(int colorTruck, int colorWheel){
   int backHeight = 18;
   int backWidth = 30;
   int cabHeight = 11;
   int cabWidth = 9;
   int connectorHeight = 4; //width 1
-  int colorTruck = COLOR_ORANGE;
 
   //truck 1
   fillRectangle(lane3colStart1+10, lane3rowStart, backWidth, backHeight, colorTruck);
@@ -217,12 +208,11 @@ void lane3(void){
   fillRectangle(lane3colStart2+33, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
 }
 
-void lane2(void){
+void lane2(int colorCar, int colorWheel){
   int topHeight = 5;
   int topWidth = 16;
   int botHeight = 5;
   int botWidth = 26;
-  int colorCar = COLOR_BLUE;
 
   //car 1
   fillRectangle(lane2colStart1+5, lane2rowStart, topWidth, topHeight, colorCar);
