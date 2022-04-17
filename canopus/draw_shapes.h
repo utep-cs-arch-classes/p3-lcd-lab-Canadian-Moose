@@ -30,6 +30,16 @@ void init_shapes(void);
 void safeZones(void);
 //roads
 void roads(void);
+//hearts
+void heart1(void);
+void heart2(void);
+void heart3(void);
+//frog
+void frog(void);
+// vehicles
+void lane1(void);
+void lane2(void);
+void lane3(void);
 
 /* handles erasing and updating all the shapes */
 //void draw_moving_shapes(void);

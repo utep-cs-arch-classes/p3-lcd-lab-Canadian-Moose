@@ -4,7 +4,7 @@
 #include "draw_shapes.h"
 
 // global vars for the rectangle
-rectangle rect1;
+//rectangle rect1;
 /* int rect_row, rect_col; */
 /* int old_rect_row, old_rect_col; */
 /* u_char height, width; */
@@ -13,9 +13,28 @@ rectangle rect1;
 /* int cir_y, cir_x; */
 /* int old_cir_y, old_cir_x; */
 /* int r; */
-circle cir1;
+//circle cir1;
 
 u_int background_color = COLOR_BLUE;
+
+/* global variables for wheel sizes */
+  int wheelh1 = 5;
+  int wheelw1 = 3;
+  int wheelh2 = 3;
+  int wheelw2 = 5;
+  int colorWheel = COLOR_BLACK;
+
+void init_shapes(void){
+  safeZones();
+  roads();
+  heart1();
+  heart2();
+  heart3();
+  frog();
+  lane3();
+  lane2();
+  lane1();
+}
 
 void safeZones(void){
   int startCol = 0;
@@ -50,6 +69,188 @@ void roads(void){
   fillRectangle(dividerCol, divider2row, width, dividerHeight, colorDivider);
   fillRectangle(dividerCol, divider1row, width, dividerHeight, colorDivider);
 }
+
+void heart1(void){
+  int rowStart = 2;
+  int colStart = 107;
+  int color = COLOR_RED;
+
+  fillRectangle(colStart, rowStart, 2, 2, color);
+  fillRectangle(colStart+3, rowStart, 2, 2, color);
+  fillRectangle(colStart+1, rowStart+1, 3, 2, color);
+  fillRectangle(colStart+2, rowStart+3, 1, 1, color);
+}
+
+void heart2(void){
+  int rowStart = 2;
+  int colStart = 114;
+  int color = COLOR_RED;
+
+  fillRectangle(colStart, rowStart, 2, 2, color);
+  fillRectangle(colStart+3, rowStart, 2, 2, color);
+  fillRectangle(colStart+1, rowStart+1, 3, 2, color);
+  fillRectangle(colStart+2, rowStart+3, 1, 1, color);
+}
+
+void heart3(void){
+  int rowStart = 2;
+  int colStart = 121;
+  int color = COLOR_RED;
+
+  fillRectangle(colStart, rowStart, 2, 2, color);
+  fillRectangle(colStart+3, rowStart, 2, 2, color);
+  fillRectangle(colStart+1, rowStart+1, 3, 2, color);
+  fillRectangle(colStart+2, rowStart+3, 1, 1, color);
+}
+
+void frog(void){
+  int colStart = 58;
+  int rowStart = 132;
+  int headWidth = 4;
+  int headHeight = 2;
+  int bodyWidth = 6;
+  int bodyHeight = 8;
+  int tailWidth = 4;  //height = 1
+  int legHeight = 4;
+  int color = COLOR_DARK_GREEN;
+
+  //body
+  fillRectangle(colStart+4, rowStart, headWidth, headHeight, color);
+  fillRectangle(colStart+3, rowStart+2, bodyWidth, bodyHeight, color);
+  fillRectangle(colStart+4, rowStart+10, headWidth, headHeight, color);
+  //legs
+  fillRectangle(colStart+1, rowStart, 1, legHeight, color);
+  fillRectangle(colStart+10, rowStart, 1, legHeight, color);
+  fillRectangle(colStart+1, rowStart+8, 1, legHeight, color);
+  fillRectangle(colStart+10, rowStart+8, 1, legHeight, color);
+  //other leg pixels
+  drawPixel(colStart+2, rowStart+3, color);
+  drawPixel(colStart+9, rowStart+3, color);
+  drawPixel(colStart+2, rowStart+8, color);
+  drawPixel(colStart+2, rowStart+9, color);
+  drawPixel(colStart+9, rowStart+8, color);
+  drawPixel(colStart+9, rowStart+9, color);
+  drawPixel(colStart+2, rowStart+7, color);
+  drawPixel(colStart+9, rowStart+7, color);
+  //peets
+  drawPixel(colStart, rowStart+11, color);
+  drawPixel(colStart+11, rowStart+11, color);
+}
+
+void lane1(void){
+  int colStart = 56;
+  int rowStart = 102;
+  int backHeight = 18;
+  int backWidth = 30;
+  int cabHeight = 11;
+  int cabWidth = 9;
+  int connectorHeight = 4; //width 1
+  int colorTruck = COLOR_PURPLE;
+
+  //truck
+  fillRectangle(colStart, rowStart, backWidth, backHeight, colorTruck);
+  fillRectangle(colStart+31, rowStart+7, cabWidth, cabHeight, colorTruck);
+  fillRectangle(colStart+30, rowStart+14, 1, connectorHeight, colorTruck);
+  //wheel 1
+  fillRectangle(colStart+3, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart+2, rowStart+17, wheelw2, wheelh2, colorWheel);
+  //wheel 2
+  fillRectangle(colStart+10, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart+9, rowStart+17, wheelw2, wheelh2, colorWheel);
+  //wheel 3
+  fillRectangle(colStart+17, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart+16, rowStart+17, wheelw2, wheelh2, colorWheel);
+  //wheel 4
+  fillRectangle(colStart+24, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart+23, rowStart+17, wheelw2, wheelh2, colorWheel);
+  //wheel 5
+  fillRectangle(colStart+34, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart+33, rowStart+17, wheelw2, wheelh2, colorWheel);
+}
+
+void lane3(void){
+  int colStart1 = 6;
+  int colStart2 = 83;
+  int rowStart = 37;
+  int backHeight = 18;
+  int backWidth = 30;
+  int cabHeight = 11;
+  int cabWidth = 9;
+  int connectorHeight = 4; //width 1
+  int colorTruck = COLOR_ORANGE;
+
+  //truck 1
+  fillRectangle(colStart1+10, rowStart, backWidth, backHeight, colorTruck);
+  fillRectangle(colStart1, rowStart+7, cabWidth, cabHeight, colorTruck);
+  fillRectangle(colStart1+9, rowStart+14, 1, connectorHeight, colorTruck);
+  //wheel 1
+  fillRectangle(colStart1+3, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart1+2, rowStart+17, wheelw2, wheelh2, colorWheel);
+  //wheel 2
+  fillRectangle(colStart1+13, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart1+12, rowStart+17, wheelw2, wheelh2, colorWheel);
+  //wheel 3
+  fillRectangle(colStart1+20, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart1+19, rowStart+17, wheelw2, wheelh2, colorWheel);
+  //wheel 4
+  fillRectangle(colStart1+27, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart1+26, rowStart+17, wheelw2, wheelh2, colorWheel);
+  //wheel 5
+  fillRectangle(colStart1+34, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart1+33, rowStart+17, wheelw2, wheelh2, colorWheel);
+
+  //truck 2
+  fillRectangle(colStart2+10, rowStart, backWidth, backHeight, colorTruck);
+  fillRectangle(colStart2, rowStart+7, cabWidth, cabHeight, colorTruck);
+  fillRectangle(colStart2+9, rowStart+14, 1, connectorHeight, colorTruck);
+  //wheel 1
+  fillRectangle(colStart2+3, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart2+2, rowStart+17, wheelw2, wheelh2, colorWheel);
+  //wheel 2
+  fillRectangle(colStart2+13, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart2+12, rowStart+17, wheelw2, wheelh2, colorWheel);
+  //wheel 3
+  fillRectangle(colStart2+20, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart2+19, rowStart+17, wheelw2, wheelh2, colorWheel);
+  //wheel 4
+  fillRectangle(colStart2+27, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart2+26, rowStart+17, wheelw2, wheelh2, colorWheel);
+  //wheel 5
+  fillRectangle(colStart2+34, rowStart+16, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart2+33, rowStart+17, wheelw2, wheelh2, colorWheel);
+}
+
+void lane2(void){
+  int colStart1 = 17;
+  int colStart2 = 86;
+  int rowStart = 76;
+  int topHeight = 5;
+  int topWidth = 16;
+  int botHeight = 5;
+  int botWidth = 26;
+  int colorCar = COLOR_BLUE;
+
+  //car 1
+  fillRectangle(colStart1+5, rowStart, topWidth, topHeight, colorCar);
+  fillRectangle(colStart1, rowStart+5, botWidth, botHeight, colorCar);
+  //wheel 1
+  fillRectangle(colStart1+5, rowStart+8, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart1+4, rowStart+9, wheelw2, wheelh2, colorWheel);
+  // wheel 2
+  fillRectangle(colStart1+18, rowStart+8, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart1+17, rowStart+9, wheelw2, wheelh2, colorWheel);
+
+  //car 2
+  fillRectangle(colStart2+5, rowStart, topWidth, topHeight, colorCar);
+  fillRectangle(colStart2, rowStart+5, botWidth, botHeight, colorCar);
+  //wheel 1
+  fillRectangle(colStart2+5, rowStart+8, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart2+4, rowStart+9, wheelw2, wheelh2, colorWheel);
+  // wheel 2
+  fillRectangle(colStart2+18, rowStart+8, wheelw1, wheelh1, colorWheel);
+  fillRectangle(colStart2+17, rowStart+9, wheelw2, wheelh2, colorWheel);
+}
+
 
 
 
@@ -254,5 +455,5 @@ moving_circle(void)
        ( cir1.cir_y + cir1.r ) >= screenHeight ) { // right boundary
     // right or left hit, reverse y velocity
     y_vel = y_vel * -1;
-  }*/
-}
+  }
+}*/

@@ -8,20 +8,9 @@
 int main() {
     configureClocks();
     lcd_init();
-    buzzer_init();
+    //buzzer_init();
 
-    safeZones();
-    roads();
-
-    //heart1();
-    //heart2();
-    //heart3();
-
-    //lane3();
-    //lane2();
-    //lane1();
-
-    //frog();
+    init_shapes();
 
     or_sr(0x18);          // CPU off, GIE on
 }
