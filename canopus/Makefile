@@ -14,7 +14,7 @@ all: canopus.elf
 canopus.elf: ${COMMON_OBJECTS} main.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd 
 
-load: canpous.elf
+load: canopus.elf
 	msp430loader.sh $^
 
 clean:
