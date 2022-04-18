@@ -9,6 +9,9 @@ int main() {
     configureClocks();
     lcd_init();
     //buzzer_init();
+    
+    //clear screen of previous loads 
+    clearScreen(background_color);
 
     //initialize the screen
     init_shapes();
