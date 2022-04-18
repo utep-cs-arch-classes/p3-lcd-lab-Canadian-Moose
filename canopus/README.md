@@ -1,16 +1,11 @@
-Project 2: Blinky Toy
+Project 3: Frogger
 ====================
 
-This program will connect to an MSP430 board in order to manipulate the LEDs and switches.
+This program will connect to an MSP430 board in order to manipulate the LED screen, switches, and buzzer.
 
 ## Features
 
-Upon running the program the red LED will brighten and dim.
-
-The program will also enable the p1 switch. This will control the state machine. <br>
-The green LED will change states from blinking at one second intevals to blinking the pattern for `SOS` if the switch is held. 
-
-The function that contains the `SOS` blink pattern is also the function that has been converted to `Assembly` for this project. 
+This is still a `work in progress` to be completed later. 
 
 ## Credits
 
@@ -20,7 +15,7 @@ The function that contains the `SOS` blink pattern is also the function that has
 >
 >Instructor: Pruitt 
 >
->Due: 04/04/2022 10pm
+>Due: 05/05/2022 10pm
 >
 
 
