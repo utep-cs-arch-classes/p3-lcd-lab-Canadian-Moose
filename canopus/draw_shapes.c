@@ -41,9 +41,9 @@ void init_shapes(void){
   heart2(heartColor);
   heart3(heartColor);
   frog(frogColor);
-  lane3(carColor2, wheelColor);
-  lane2(truckColor3, wheelColor);
-  lane1(truckColor1, wheelColor);
+  //lane3(carColor2, wheelColor);
+  //lane2(truckColor3, wheelColor);
+  //lane1(truckColor1, wheelColor);
 }
 
 void safeZones(void){
