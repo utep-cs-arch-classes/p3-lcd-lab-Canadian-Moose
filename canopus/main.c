@@ -10,7 +10,11 @@ int main() {
     lcd_init();
     //buzzer_init();
 
+    //initialize the screen
     init_shapes();
+    
+    //begin the timer 
+    enableWDTInterrupts();
 
     or_sr(0x18);          // CPU off, GIE on
 }
