@@ -244,12 +244,12 @@ void draw_moving_shapes(void){
   if (lane3colStart1 <= -118){
     lane3colStart1 = 118;
   }else{
-    lane3colStart1-=5;
+    lane3colStart1-=7;
   }
   if (lane3colStart2 <= -118){
     lane3colStart2 = 118;
   }else{
-    lane3colStart2-=5;
+    lane3colStart2-=7;
   }
   
   //Move Lane 2
@@ -261,7 +261,7 @@ void draw_moving_shapes(void){
   if (lane2colStart2 >= 118){
     lane2colStart2 = -118;
   }else{
-    lane2colStart2+=5;
+    lane2colStart2+=10;
   }
   
   //Move Lane 1
