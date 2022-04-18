@@ -241,31 +241,31 @@ void draw_moving_shapes(void){
   lane1(background_color, background_color);
 
   //Move Lane 3	
-  if (lane3colStart1 == -118){
+  if (lane3colStart1 <= -118){
     lane3colStart1 = 118;
   }else{
     lane3colStart1-=5;
   }
-  if (lane3colStart2 == -118){
+  if (lane3colStart2 <= -118){
     lane3colStart2 = 118;
   }else{
     lane3colStart2-=5;
   }
   
   //Move Lane 2
-  if (lane2colStart1 == 118){
+  if (lane2colStart1 >= 118){
     lane2colStart1 = -118;
   }else{
-    lane2colStart1+=5;
+    lane2colStart1+=10;
   }
-  if (lane2colStart2 == 118){
+  if (lane2colStart2 >= 118){
     lane2colStart2 = -118;
   }else{
     lane2colStart2+=5;
   }
   
   //Move Lane 1
-  if (lane1colStart == 118){
+  if (lane1colStart => 118){
     lane1colStart = -118;
   }else{
     lane1colStart+=5;
