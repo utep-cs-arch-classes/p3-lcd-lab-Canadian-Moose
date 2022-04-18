@@ -16,13 +16,12 @@ int lane1colStart = 56;
 int lane1rowStart = 102;
 //lane 3
 int truckColor3 = COLOR_ORANGE;
-int lane3colStart1 = 6;
-int lane3colStart2 = 83;
+int lane3colStart1 = 10;
 int lane3rowStart = 37;
 //lane 2
 int carColor2 = COLOR_BLUE;
-int lane2colStart1 = 17;
-int lane2colStart2 = 86;
+int lane2colStart1 = 10;
+int lane2colStart2 = 58;
 int lane2rowStart = 76;
 
 u_int background_color = COLOR_GRAY;
@@ -186,26 +185,6 @@ void lane3(int colorTruck, int colorWheel){
   //wheel 5
   fillRectangle(lane3colStart1+34, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
   fillRectangle(lane3colStart1+33, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
-
-  //truck 2
-  fillRectangle(lane3colStart2+10, lane3rowStart, backWidth, backHeight, colorTruck);
-  fillRectangle(lane3colStart2, lane3rowStart+7, cabWidth, cabHeight, colorTruck);
-  fillRectangle(lane3colStart2+9, lane3rowStart+14, 1, connectorHeight, colorTruck);
-  //wheel 1
-  fillRectangle(lane3colStart2+3, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(lane3colStart2+2, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
-  //wheel 2
-  fillRectangle(lane3colStart2+13, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(lane3colStart2+12, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
-  //wheel 3
-  fillRectangle(lane3colStart2+20, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(lane3colStart2+19, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
-  //wheel 4
-  fillRectangle(lane3colStart2+27, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(lane3colStart2+26, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
-  //wheel 5
-  fillRectangle(lane3colStart2+34, lane3rowStart+16, wheelw1, wheelh1, colorWheel);
-  fillRectangle(lane3colStart2+33, lane3rowStart+17, wheelw2, wheelh2, colorWheel);
 }
 
 void lane2(int colorCar, int colorWheel){
@@ -241,37 +220,32 @@ void draw_moving_shapes(void){
   lane1(background_color, background_color);
 
   //Move Lane 3	
-  if (lane3colStart1 <= -118){
-    lane3colStart1 = 118;
+  if (lane3colStart1 <= 0){
+    lane3colStart1 = 88;
   }else{
-    lane3colStart1-=7;
-  }
-  if (lane3colStart2 <= -118){
-    lane3colStart2 = 118;
-  }else{
-    lane3colStart2-=7;
+    lane3colStart1-=13;
   }
   
   //Move Lane 2
-  if (lane2colStart1 >= 118){
-    lane2colStart1 = -118;
+  if (lane2colStart1 >= 88){
+    lane2colStart1 = 0;
   }else{
-    lane2colStart1+=10;
+    lane2colStart1+=5;
   }
-  if (lane2colStart2 >= 118){
-    lane2colStart2 = -118;
+  if (lane2colStart2 >= 88){
+    lane2colStart2 = 0;
   }else{
-    lane2colStart2+=10;
+    lane2colStart2+=5;
   }
   
   //Move Lane 1
-  if (lane1colStart >= 118){
-    lane1colStart = -118;
+  if (lane1colStart >= 88){
+    lane1colStart = 0;
   }else{
-    lane1colStart+=5;
+    lane1colStart+=1;
   }
 
-  lane3(carColor2, wheelColor);
-  lane2(truckColor3, wheelColor);
+  lane3(truckColor3, wheelColor);
+  lane2(carColor2, wheelColor);
   lane1(truckColor1, wheelColor);
 }
