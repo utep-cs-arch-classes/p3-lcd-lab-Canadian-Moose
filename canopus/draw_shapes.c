@@ -265,7 +265,7 @@ void draw_moving_shapes(void){
   }
   
   //Move Lane 1
-  if (lane1colStart => 118){
+  if (lane1colStart >= 118){
     lane1colStart = -118;
   }else{
     lane1colStart+=5;
