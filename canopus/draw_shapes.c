@@ -236,40 +236,42 @@ void lane2(int colorCar, int colorWheel){
 }
 
 void draw_moving_shapes(void){
-  //Move Lane 3
-	lane3(background_color, background_color);
-	if (lane3colStart1 == -118){
-		lane3colStart1 = 118;
-	}else{
-		lane3colStart1-=5;
-	}
-	if (lane3colStart2 == -118){
-		lane3colStart2 = 118;
-	}else{
-		lane3colStart2-=5;
-	}
-	lane3(carColor2, wheelColor);
+  lane3(background_color, background_color);
+  lane2(background_color, background_color);
+  lane1(background_color, background_color);
 
+  //Move Lane 3	
+  if (lane3colStart1 == -118){
+    lane3colStart1 = 118;
+  }else{
+    lane3colStart1-=5;
+  }
+  if (lane3colStart2 == -118){
+    lane3colStart2 = 118;
+  }else{
+    lane3colStart2-=5;
+  }
+  
   //Move Lane 2
-	lane2(background_color, background_color);
-	if (lane2colStart1 == 118){
-		lane2colStart1 = -118;
-	}else{
-		lane2colStart1+=5;
-	}
-	if (lane2colStart2 == 118){
-		lane2colStart2 = -118;
-	}else{
-		lane2colStart2+=5;
-	}
-	lane2(truckColor3, wheelColor);
-	
+  if (lane2colStart1 == 118){
+    lane2colStart1 = -118;
+  }else{
+    lane2colStart1+=5;
+  }
+  if (lane2colStart2 == 118){
+    lane2colStart2 = -118;
+  }else{
+    lane2colStart2+=5;
+  }
+  
   //Move Lane 1
-	lane1(background_color, background_color);
-	if (lane1colStart == 118){
-		lane1colStart = -118;
-	}else{
-		lane1colStart+=5;
-	}
-	lane1(truckColor1, wheelColor);
+  if (lane1colStart == 118){
+    lane1colStart = -118;
+  }else{
+    lane1colStart+=5;
+  }
+
+  lane3(carColor2, wheelColor);
+  lane2(truckColor3, wheelColor);
+  lane1(truckColor1, wheelColor);
 }
