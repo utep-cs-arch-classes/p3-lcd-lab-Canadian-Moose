@@ -234,3 +234,42 @@ void lane2(int colorCar, int colorWheel){
   fillRectangle(lane2colStart2+18, lane2rowStart+8, wheelw1, wheelh1, colorWheel);
   fillRectangle(lane2colStart2+17, lane2rowStart+9, wheelw2, wheelh2, colorWheel);
 }
+
+void draw_moving_shapes(void){
+  //Move Lane 3
+	lane3(background_color, background_color);
+	if (lane3colStart1 == -128){
+		lane3colStart1 = 128;
+	}else{
+		lane3colStart1--;
+	}
+	if (lane3colStart2 == -128){
+		lane3colStart2 = 128;
+	}else{
+		lane3colStart2--;
+	}
+	lane3(carColor2, wheelColor);
+
+  //Move Lane 2
+	lane2(background_color, background_color);
+	if (lane2colStart1 == 128){
+		lane2colStart1 = -128;
+	}else{
+		lane2colStart1++;
+	}
+	if (lane2colStart2 == 128){
+		lane2colStart2 = -128;
+	}else{
+		lane2colStart2++;
+	}
+	lane2(truckColor3, wheelColor);
+	
+  //Move Lane 1
+	lane1(background_color, background_color);
+	if (lane1colStart == 128){
+		lane1colStart = -128;
+	}else{
+		lane1colStart++;
+	}
+	lane1(truckColor1, wheelColor);
+}
