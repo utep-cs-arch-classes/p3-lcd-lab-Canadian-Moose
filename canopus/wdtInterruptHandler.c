@@ -13,24 +13,30 @@ __interrupt_vec(WDT_VECTOR) WDT()
   const  u_int second_limit = 250;
   static u_int second_count = 0;
   static int lives = 3;
-  static bool endZone = false; 
+  static bool endZone = false;
+  extern int frogRowStart;
 
   second_count++;
 
   if (second_count >= second_limit) {
-    //this will check for collisions or win
+    //this will check for collisions
     //TODO
-    if(frogRowStart >= 32){
+    // This will check for the win condition 
+    if(frogRowStart <= 32){
+      // if the frog is in the end zone, true 
       endZone = true;
     }
 
     // This will call the correct state 
     if (endZone == true){
-      state1();
+      // Win state if in end zone 
+      //you_win();
     }else if (lives == 0){
-      state2();
+      // You lose state if 0 lives 
+      game_over();
     }else{
-      state0();
+      // game state 
+      play_game();
     }
 
     //reset the second counter 

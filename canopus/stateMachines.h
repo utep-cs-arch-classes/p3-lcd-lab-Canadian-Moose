@@ -1,3 +1,3 @@
-void state0(void);
-void state1(void);
-void state2(void);
+void play_game(void);
+void you_win(void);
+void game_over(void);
