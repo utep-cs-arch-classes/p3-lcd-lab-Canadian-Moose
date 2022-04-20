@@ -9,8 +9,8 @@
 void
 __interrupt_vec(WDT_VECTOR) WDT()
 {
-  const  u_int second_limit = 250;
-  static u_int second_count = 0;
+  const  int second_limit = 250;
+  static int second_count = 0;
   static int lives = 3;
   static bool endZone = false;
   extern int frogRowStart;
