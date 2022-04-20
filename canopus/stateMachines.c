@@ -1,4 +1,7 @@
+#include <msp430.h>
 #include <stdbool.h>
+#include "lcdutils.h"
+#include "lcddraw.h"
 #include "stateMachines.h"
 #include "led.h"
 #include "switches.h"
