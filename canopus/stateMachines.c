@@ -6,13 +6,56 @@
 #include "switches.h"
 #include "draw_shapes.h"
 
+extern int frogRowStart;
+extern int frogColStart;
+extern int frogColor;
+
 // State0 is the default game state
 void play_game(void){
   /* This will call draw_shapes.c 
      which will move the vehicles */
   draw_moving_shapes();
-  /* This will call the listener for the frog */
+  
+  /* This will listen for the switches to move the frog */
+  // Switch 1 : LEFT 
+  if (switch1_down){
+    // color in old frog
+    eraseFrog();
+    // move frog left 
+    frogColStart-=10;
+    // redraw frog 
+    frog(frogColor);
+  }
 
+  // Switch 2 : UP
+  if (switch2_down){
+    // color in old frog
+    eraseFrog();
+    // move frog left 
+    frogRowStart-=32;
+    // redraw frog 
+    frog(frogColor);
+  }
+
+  // Switch 3 : DOWN
+  if (switch3_down){
+    // color in old frog
+    eraseFrog();
+    // move frog left 
+    frogRowStart+=32;
+    // redraw frog 
+    frog(frogColor);
+  }
+
+  // Switch 4 : RIGHT
+  if (switch4_down){
+    // color in old frog
+    eraseFrog();
+    // move frog left 
+    frogColStart+=10;
+    // redraw frog 
+    frog(frogColor);
+  }
   
 }
 

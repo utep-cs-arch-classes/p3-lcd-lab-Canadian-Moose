@@ -131,6 +131,15 @@ void frog(int colorFrog){
   drawPixel(frogColStart+11, frogRowStart+11, colorFrog);
 }
 
+void eraseFrog(void){
+  //depending on zone, color in old frog
+  if (frogRowStart < 32 || frogRowStart > 129){
+    frog(COLOR_PALE_GREEN);
+  }else{
+    frog(background_color);
+  }
+}
+
 void lane1(int colorTruck, int colorWheel){
   int backHeight = 18;
   int backWidth = 30;

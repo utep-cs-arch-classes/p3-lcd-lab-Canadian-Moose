@@ -36,6 +36,7 @@ void heart2(int colorHeart);
 void heart3(int colorHeart);
 //frog
 void frog(int colorFrog);
+void eraseFrog(void);
 // vehicles
 void lane1(int colorTruck, int colorWheel);
 void lane2(int colorCar, int colorWheel);

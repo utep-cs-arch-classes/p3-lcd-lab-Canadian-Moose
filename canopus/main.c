@@ -4,10 +4,12 @@
 #include "lcdutils.h"
 #include "lcddraw.h"
 #include "draw_shapes.h"
+#include "switches.h"
 
 int main() {
     configureClocks();
     lcd_init();
+    switch_init();
     //buzzer_init();
     
     //clear screen of previous loads 
