@@ -39,7 +39,7 @@ __interrupt_vec(WDT_VECTOR) WDT()
       play_game();
     } */
     
-    play_game();
+    game_over();
 
     //reset the second counter 
     second_count = 0;
