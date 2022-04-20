@@ -1,2 +1,3 @@
-void fastCounter(void);
-void secondCounter(void);
+void state0(void);
+void state1(void);
+void state2(void);

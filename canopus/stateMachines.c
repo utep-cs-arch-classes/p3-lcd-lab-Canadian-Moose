@@ -1,50 +1,44 @@
+#include <stdbool.h>
 #include "stateMachines.h"
 #include "led.h"
 
-// State0 (button pushed) calls custom function
-// will count to 100 then call the function 
-void fastCounter(void)
-{
-  static int count = 0;
-  static int blinkCount = 0;
+// State0 is the default game state 
+void state0(void){
+  /* This will call draw_shapes.c 
+     which will move the vehicles */
+  draw_moving_shapes();
+  /* This will call the listener for the frog */
 
-  count++;
-  // every 2/5ths of a second 
-  if (count >= 100) {
-    // call custom function (C or Assembly)
-    blinkPattern(blinkCount);
-    // increment blink counter 
-    blinkCount++;
-    // tell led.c the led changed
-    led_changed = 1;
-    led_update();
-    // reset counter to 0
-    count = 0;
-  }
-  // reset blinkCount to 0 if it reaches 25 (end of pattern)
-  if (blinkCount > 25){
-    blinkCount = 0;
-  }
+
+  
 }
 
-// State1 (button not pushed) executes code once per second
-// The light will turn on/off every second 
-void secondCounter (void)
-{
-  // number of ticks per second 
-  const  int secondLimit = 250;
-  static int secondCount = 0;
 
-  // measure a second
-  secondCount ++;
-  // once each second 
-  if (secondCount >= secondLimit) {
-    // flip the green led 
-    green_on = 1 - green_on;
-    // update led.c 
-    led_changed = 1;
-    led_update();
-    // reset second counter 
-    secondCount = 0;
-  }
+// State1 is the win screen with text 
+void state1(void){
+  // change the background color
+  clearScreen(COLOR_GREEN);
+  // add the YOU WIN text to the screen
+
+  // add the 'press any button to continue'
+
+  // call listener for the reset win boolean
+
+
+  
+}
+
+
+// State2 is the game over screen with text
+void state2(void){
+  // clear the screen
+
+  // add the game over text
+
+  // add press any button to continue text
+
+  // call listener to reset the lives to 3
+
+
+  
 }
