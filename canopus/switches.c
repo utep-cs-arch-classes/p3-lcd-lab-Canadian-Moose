@@ -4,6 +4,7 @@ int switches = 0;
 char switch1_down;
 char switch2_down;
 char switch3_down;
+char switch4_down;
 
 /* Updates when the interrupt fires and returns current state of switches */
 static char 
@@ -20,7 +21,7 @@ void
 switch_init(void)		/* setup switch */
 {  
   P2REN |= SWITCHES;		/* enables resistors for switches */
-  P2IE |= SWITCHES;		/* enable interrupts from switches */
+  P2IE |= SWITCHES;		  /* enable interrupts from switches */
   P2OUT |= SWITCHES;		/* pull-ups for switches */
   P2DIR &= ~SWITCHES;		/* set switches' bits for input */
   switch_update_interrupt_sense();
@@ -34,5 +35,6 @@ switch_interrupt_handler(void)
   switch1_down = (p2val & SW1) ? 0 : 1;
   switch2_down = (p2val & SW2) ? 0 : 1;
   switch3_down = (p2val & SW3) ? 0 : 1;
+  switch4_down = (p2val & SW4) ? 0 : 1;
 }
 
