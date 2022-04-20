@@ -27,7 +27,7 @@ __interrupt_vec(WDT_VECTOR) WDT()
       endZone = true;
     }
 
-    // This will call the correct state 
+    /* This will call the correct state 
     if (endZone == true){
       // Win state if in end zone 
       //you_win();
@@ -37,7 +37,9 @@ __interrupt_vec(WDT_VECTOR) WDT()
     }else{
       // game state 
       play_game();
-    }
+    } */
+    
+    play_game();
 
     //reset the second counter 
     second_count = 0;
