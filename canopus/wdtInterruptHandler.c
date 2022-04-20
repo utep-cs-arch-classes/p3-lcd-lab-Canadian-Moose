@@ -1,7 +1,6 @@
 #include <msp430.h>
 #include <stdbool.h>
 #include "libTimer.h"
-#include "draw_shapes.h"
 #include "stateMachines.h"
 
 // function that handles interrupts
@@ -39,7 +38,7 @@ __interrupt_vec(WDT_VECTOR) WDT()
       play_game();
     } */
     
-    game_over();
+    play_game();
 
     //reset the second counter 
     second_count = 0;
