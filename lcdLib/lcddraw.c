@@ -123,7 +123,7 @@ void drawString8x12(u_char col, u_char row, char *string,
   u_char cols = col;
   while (*string) {
     drawChar8x12(cols, row, *string++, fgColorBGR, bgColorBGR);
-    cols += 6;
+    cols += 9;
   }
 }
 
@@ -156,7 +156,7 @@ void drawString11x16(u_char col, u_char row, char *string,
   u_char cols = col;
   while (*string) {
     drawChar11x16(cols, row, *string++, fgColorBGR, bgColorBGR);
-    cols += 6;
+    cols += 12;
   }
 }
 
