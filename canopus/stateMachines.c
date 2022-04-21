@@ -65,7 +65,7 @@ void you_win(void){
   // change the background color
   clearScreen(COLOR_GREEN);
   // add the YOU WIN text to the screen
-  drawString5x7(5, 5, "You Win!!", COLOR_PURPLE, COLOR_GREEN);
+  drawString11x16(5, 5, "You Win!!", COLOR_PURPLE, COLOR_GREEN);
   // add the 'press any button to continue'
   drawString5x7(5, 97, "Play again?", COLOR_RED, COLOR_GREEN);
   drawString5x7(5, 129, "Press any button to continue...", COLOR_RED, COLOR_GREEN);
@@ -79,7 +79,7 @@ void game_over(void){
   // clear the screen
   clearScreen(COLOR_BLACK);
   // add the game over text
-  drawString5x7(5, 5, "GAME OVER", COLOR_RED, COLOR_BLACK);
+  drawString11x16(5, 5, "GAME OVER", COLOR_RED, COLOR_BLACK);
   // add press any button to continue text
   drawString5x7(5, 97, "Play again?", COLOR_WHITE, COLOR_BLACK);
   drawString5x7(5, 129, "Press any button to continue...", COLOR_WHITE, COLOR_BLACK);
