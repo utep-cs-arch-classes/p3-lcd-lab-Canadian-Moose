@@ -103,7 +103,7 @@ void drawChar8x12(u_char rcol, u_char rrow, char c,
   u_char bit = 0x01;
   u_char oc = c - 0x20;
 
-  lcd_setArea(rcol, rrow, rcol + 7, rrow + 11); /* relative to requested col/row */
+  lcd_setArea(rcol, rrow, rcol + 7, rrow + 12); /* relative to requested col/row */
   while (row < 8) {
     while (col < 5) {
       u_int colorBGR = (font_8x12[oc][col] & bit) ? fgColorBGR : bgColorBGR;
@@ -136,7 +136,7 @@ void drawChar11x16(u_char rcol, u_char rrow, char c,
   u_char bit = 0x01;
   u_char oc = c - 0x20;
 
-  lcd_setArea(rcol, rrow, rcol + 10, rrow + 15); /* relative to requested col/row */
+  lcd_setArea(rcol, rrow, rcol + 10, rrow + 16); /* relative to requested col/row */
   while (row < 17) {
     while (col < 11) {
       u_int colorBGR = (font_11x16[oc][col] & bit) ? fgColorBGR : bgColorBGR;
