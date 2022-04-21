@@ -138,7 +138,7 @@ void drawChar11x16(u_char rcol, u_char rrow, char c,
 
   lcd_setArea(rcol, rrow, rcol + 10, rrow + 15); /* relative to requested col/row */
   while (row < 8) {
-    while (col < 5) {
+    while (col < 12) {
       u_int colorBGR = (font_11x16[oc][col] & bit) ? fgColorBGR : bgColorBGR;
       lcd_writeColor(colorBGR);
       col++;
