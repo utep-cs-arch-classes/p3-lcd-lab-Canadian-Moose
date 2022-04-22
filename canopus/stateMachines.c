@@ -6,9 +6,11 @@
 #include "switches.h"
 #include "draw_shapes.h"
 
+int state; 
 extern int frogRowStart;
 extern int frogColStart;
 extern int frogColor;
+short redrawScreen = 1; 
 
 // State0 is the default game state
 void play_game(void){

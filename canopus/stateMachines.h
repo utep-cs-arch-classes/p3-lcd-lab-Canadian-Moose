@@ -3,6 +3,9 @@
 
 #include <lcdutils.h>
 
+int state;
+short redrawScreen;
+
 void play_game(void);
 void you_win(void);
 void game_over(void);

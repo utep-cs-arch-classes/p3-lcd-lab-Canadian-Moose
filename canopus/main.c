@@ -5,6 +5,12 @@
 #include "lcddraw.h"
 #include "draw_shapes.h"
 #include "switches.h"
+#include "stateMachines.h"
+
+extern int state;
+extern int frogColStart;
+extern int frogRowStart;
+extern int frogColor;
 
 int main() {
     configureClocks();
@@ -21,5 +27,14 @@ int main() {
     //begin the timer 
     enableWDTInterrupts();
 
-    or_sr(0x18);          // CPU off, GIE on
+    // forever check for the state 
+    while(1){
+      if(redrawScreen){
+	redrawScreen = 0;
+	if(state == 0){
+	  play_game();
+	}
+      }
+      or_sr(0x18);          // CPU off, GIE on
+    }
 }
