@@ -41,6 +41,7 @@ void init_shapes(void){
   heart1(heartColor);
   heart2(heartColor);
   heart3(heartColor);
+  
   frogColStart = 58;
   frogRowStart = 132;
   frog(frogColor);
