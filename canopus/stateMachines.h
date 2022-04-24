@@ -3,8 +3,8 @@
 
 #include <lcdutils.h>
 
-int state;
-int lives; 
+static int state;
+static int lives; 
 short redrawScreen;
 
 void play_game(void);
