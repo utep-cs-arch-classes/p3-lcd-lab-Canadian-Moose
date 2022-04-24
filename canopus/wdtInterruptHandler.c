@@ -27,7 +27,7 @@ __interrupt_vec(WDT_VECTOR) WDT()
       state = 2;
     }else{
       state = 0;
-      draw_moving_shapes();
+      //draw_moving_shapes();
     }
 
     //reset the second counter 
