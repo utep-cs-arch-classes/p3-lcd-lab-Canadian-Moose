@@ -30,47 +30,7 @@ int main() {
 	}else if(state == 2){
 	  game_over();
 	}else{
-	  //play_game();
-		  /* This will listen for the switches to move the frog */
-  // Switch 1 : LEFT 
-  if (switch1_down){
-    // color in old frog
-    eraseFrog();
-    // move frog left 
-    frogColStart-=10;
-    // redraw frog 
-    frog(frogColor);
-  }
-
-  // Switch 2 : UP
-  if (switch2_down){
-    // color in old frog
-    eraseFrog();
-    // move frog left 
-    frogRowStart-=32;
-    // redraw frog 
-    frog(frogColor);
-  }
-
-  // Switch 3 : DOWN
-  if (switch3_down){
-    // color in old frog
-    eraseFrog();
-    // move frog left 
-    frogRowStart+=32;
-    // redraw frog 
-    frog(frogColor);
-  }
-
-  // Switch 4 : RIGHT
-  if (switch4_down){
-    // color in old frog
-    eraseFrog();
-    // move frog left 
-    frogColStart+=10;
-    // redraw frog 
-    frog(frogColor);
-  }
+	  play_game();
 	}
       or_sr(0x18);          // CPU off, GIE on
     }
