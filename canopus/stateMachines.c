@@ -74,6 +74,7 @@ void you_win(void){
   if (switch1_down | switch2_down | switch3_down | switch4_down){
     lives = 3;
     state = 0;
+    init_shapes();
   }
 }
 
@@ -92,5 +93,6 @@ void game_over(void){
   if (switch1_down | switch2_down | switch3_down | switch4_down){
     lives = 3;
     state = 0;
+    init_shapes();
   }
 }
