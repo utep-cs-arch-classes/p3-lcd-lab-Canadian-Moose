@@ -31,7 +31,12 @@ int main() {
     while(1){
       if(redrawScreen){
 	redrawScreen = 0;
-	if(state == 0){
+	// check for which state to call 
+	if(state == 1){
+	  you_win();
+	}else if(state == 2){
+	  game_over();
+	}else{
 	  play_game();
 	}
       }

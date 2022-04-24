@@ -6,7 +6,7 @@
 #include "switches.h"
 #include "draw_shapes.h"
 
-int state; 
+int state;
 extern int frogRowStart;
 extern int frogColStart;
 extern int frogColor;
