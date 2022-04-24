@@ -12,10 +12,8 @@ __interrupt_vec(WDT_VECTOR) WDT()
 {
   const  int second_limit = 250;
   static int second_count = 0;
-  static int lives = 3;
-
+  
   extern int frogRowStart;
-  extern int state; 
 
   second_count++;
 
