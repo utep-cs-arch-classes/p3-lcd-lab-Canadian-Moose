@@ -14,7 +14,7 @@ short redrawScreen = 1;
 void play_game(void){
   /* This will call draw_shapes.c 
      which will move the vehicles */
-  draw_moving_shapes();
+  // draw_moving_shapes();
   
   /* This will listen for the switches to move the frog */
   // Switch 1 : LEFT 
