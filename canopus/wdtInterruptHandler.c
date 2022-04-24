@@ -13,8 +13,6 @@ __interrupt_vec(WDT_VECTOR) WDT()
   const  int second_limit = 250;
   static int second_count = 0;
   
-  extern int frogRowStart;
-
   second_count++;
 
   if (second_count >= second_limit) {
