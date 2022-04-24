@@ -7,11 +7,6 @@
 #include "switches.h"
 #include "stateMachines.h"
 
-extern int state;
-extern int frogColStart;
-extern int frogRowStart;
-extern int frogColor;
-
 int main() {
     configureClocks();
     lcd_init();
