@@ -6,6 +6,8 @@
 #include "switches.h"
 #include "draw_shapes.h"
 
+static int state;
+static int lives = 3; 
 short redrawScreen = 1; 
 
 // State0 is the default game state
@@ -69,7 +71,10 @@ void you_win(void){
   drawString5x7(5, 129, "Press any button to", COLOR_RED, COLOR_GREEN);
   drawString5x7(5, 139, " continue...", COLOR_RED, COLOR_GREEN);
   // call listener to continue 
-  
+  if (switch1_down | switch2_down | switch3_down | switch4_down){
+    lives = 3;
+    state = 0;
+  }
 }
 
 
@@ -81,7 +86,11 @@ void game_over(void){
   drawString5x7(5, 5, "GAME OVER", COLOR_RED, COLOR_BLACK);
   // add press any button to continue text
   drawString5x7(5, 97, "Play again?", COLOR_WHITE, COLOR_BLACK);
-  drawString5x7(5, 129, "Press any button to continue...", COLOR_WHITE, COLOR_BLACK);
+  drawString5x7(5, 129, "Press any button to", COLOR_WHITE, COLOR_BLACK);
+  drawString5x7(5, 139, " continue...", COLOR_WHITE, COLOR_BLACK);
   // call listener to reset the lives to 3
-  
+  if (switch1_down | switch2_down | switch3_down | switch4_down){
+    lives = 3;
+    state = 0;
+  }
 }
