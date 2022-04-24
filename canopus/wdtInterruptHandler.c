@@ -30,7 +30,7 @@ __interrupt_vec(WDT_VECTOR) WDT()
       //draw_moving_shapes();
     }
     
-    switch(state):
+    switch(state){
     case 0: 
       play_game();
       break;
@@ -42,6 +42,7 @@ __interrupt_vec(WDT_VECTOR) WDT()
       break;
     default:
       play_game();
+    }
 
     //reset the second counter 
     second_count = 0;
