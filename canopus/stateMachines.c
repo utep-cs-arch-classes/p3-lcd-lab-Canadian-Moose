@@ -8,7 +8,7 @@
 
 int state;
 int lives = 3; 
-short redrawScreen = 1; 
+//short redrawScreen = 1; 
 
 // State0 is the default game state
 void play_game(void){
