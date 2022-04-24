@@ -22,10 +22,8 @@ int main() {
     //begin the timer 
     enableWDTInterrupts();
 
-    /* forever check for the state 
+    /* forever check for the state */
     while(1){
-      if(redrawScreen){
-	redrawScreen = 0;
 	// check for which state to call 
 	if(state == 1){
 	  you_win();
@@ -34,7 +32,7 @@ int main() {
 	}else{
 	  play_game();
 	}
-      } */
       or_sr(0x18);          // CPU off, GIE on
-    //}
+    }
+
 }
