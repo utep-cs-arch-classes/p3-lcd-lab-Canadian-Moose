@@ -6,7 +6,7 @@
 #include "switches.h"
 #include "draw_shapes.h"
 
-int state;
+int state = 1;
 int lives = 3; 
 short redrawScreen = 1; 
 
