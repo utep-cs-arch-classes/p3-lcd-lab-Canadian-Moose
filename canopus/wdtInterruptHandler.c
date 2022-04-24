@@ -10,7 +10,7 @@
 void
 __interrupt_vec(WDT_VECTOR) WDT()
 {
-  const  int second_limit = 250;
+  const  int second_limit = 100;
   static int second_count = 0;
   
   second_count++;
@@ -29,7 +29,7 @@ __interrupt_vec(WDT_VECTOR) WDT()
       state = 0;
       draw_moving_shapes();
     }
-    /*
+    
     switch(state){
     case 0: 
       play_game();
@@ -42,7 +42,7 @@ __interrupt_vec(WDT_VECTOR) WDT()
       break;
     default:
       play_game();
-    } */
+    } 
 
     //reset the second counter 
     second_count = 0;
