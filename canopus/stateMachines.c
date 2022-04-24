@@ -75,9 +75,10 @@ void you_win(void){
   drawString5x7(5, 129, "Press any button to", COLOR_RED, COLOR_GREEN);
   drawString5x7(5, 139, " continue...", COLOR_RED, COLOR_GREEN);
   // call listener to continue 
-  if (switch1_down || switch2_down || switch3_down || switch4_down){
+  if (switch1_down){
     lives = 3;
     state = 0;
+    switch1_down = 0;
     init_shapes();
   }
 }
