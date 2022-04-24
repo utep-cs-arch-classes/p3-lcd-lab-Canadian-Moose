@@ -35,6 +35,7 @@ const int wheelColor = COLOR_BLACK;
 
 /* initialize the lanes and non-moving-shapes */ 
 void init_shapes(void){
+  clearScreen(background_color);
   safeZones();
   roads();
   heart1(heartColor);
