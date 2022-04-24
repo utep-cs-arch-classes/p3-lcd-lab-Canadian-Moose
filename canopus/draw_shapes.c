@@ -33,16 +33,16 @@ const int wheelh2 = 3;
 const int wheelw2 = 5;
 const int wheelColor = COLOR_BLACK;
 
+/* initialize the lanes and non-moving-shapes */ 
 void init_shapes(void){
   safeZones();
   roads();
   heart1(heartColor);
   heart2(heartColor);
   heart3(heartColor);
+  frogColStart = 58;
+  frogRowStart = 132;
   frog(frogColor);
-  //lane3(carColor2, wheelColor);
-  //lane2(truckColor3, wheelColor);
-  //lane1(truckColor1, wheelColor);
 }
 
 void safeZones(void){
