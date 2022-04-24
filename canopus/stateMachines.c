@@ -25,6 +25,7 @@ void play_game(void){
     frogColStart-=10;
     // redraw frog 
     frog(frogColor);
+    switch1_down = 0; 
   }
 
   // Switch 2 : UP
@@ -35,6 +36,7 @@ void play_game(void){
     frogRowStart-=32;
     // redraw frog 
     frog(frogColor);
+    switch2_down = 0; 
   }
 
   // Switch 3 : DOWN
@@ -45,6 +47,7 @@ void play_game(void){
     frogRowStart+=32;
     // redraw frog 
     frog(frogColor);
+    switch3_down = 0;
   }
 
   // Switch 4 : RIGHT
@@ -55,6 +58,7 @@ void play_game(void){
     frogColStart+=10;
     // redraw frog 
     frog(frogColor);
+    switch4_down = 0;
   }
   
 }
