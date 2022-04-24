@@ -6,8 +6,8 @@
 #include "switches.h"
 #include "draw_shapes.h"
 
-static int state;
-static int lives = 3; 
+int state;
+int lives = 3; 
 short redrawScreen = 1; 
 
 // State0 is the default game state
