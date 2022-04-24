@@ -22,7 +22,7 @@ int main() {
     //begin the timer 
     enableWDTInterrupts();
 
-    /* forever check for the state */
+    /* forever check for the state 
     while(1){
 	// check for which state to call 
 	if(state == 1){
@@ -31,8 +31,8 @@ int main() {
 	  game_over();
 	}else{
 	  play_game();
-	}
+	} */
       or_sr(0x18);          // CPU off, GIE on
-    }
+    //}
 
 }
