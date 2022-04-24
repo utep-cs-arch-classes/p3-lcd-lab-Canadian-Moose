@@ -3,24 +3,32 @@
 
 #include <lcdutils.h>
 
-/*
-typedef struct rect_st {
-  int rect_row;
-  int rect_col;
-  int old_rect_row;
-  int old_rect_col;
-  u_char height;
-  u_char width;
-} rectangle;
+//hearts 
+int heartColor;
+//frog
+int frogColor;
+int frogColStart;
+int frogRowStart;
+//lane 1
+int truckColor1;
+int lane1colStart;
+int lane1rowStart;
+//lane 3
+int truckColor3;
+int lane3colStart1;
+int lane3rowStart;
+//lane 2
+int carColor2;
+int lane2colStart1;
+int lane2colStart2;
+int lane2rowStart;
 
-typedef struct cir_st {
-  int cir_x;
-  int cir_y;
-  int old_cir_x;
-  int old_cir_y;
-  int r;
-} circle;
-*/
+const int wheelh1;
+const int wheelw1;
+const int wheelh2;
+const int wheelw2;
+const int wheelColor;
+
 extern u_int background_color;
 
 /* initializes shape positions */
