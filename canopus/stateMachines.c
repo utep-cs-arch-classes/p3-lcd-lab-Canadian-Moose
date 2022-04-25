@@ -66,8 +66,6 @@ void play_game(void){
 
 // State1 is the win screen with text
 void you_win(void){
-  // change the background color
-  clearScreen(COLOR_GREEN);
   // add the YOU WIN text to the screen
   drawString5x7(5, 32, "You Win!!", COLOR_PURPLE, COLOR_GREEN);
   // add the 'press any button to continue'
