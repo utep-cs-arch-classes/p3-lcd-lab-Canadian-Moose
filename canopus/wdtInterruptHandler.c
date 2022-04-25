@@ -20,7 +20,9 @@ __interrupt_vec(WDT_VECTOR) WDT()
     //TODO
     // This will check for the win condition 
     if(frogRowStart <= 32){
-      // if the frog is in the end zone, true 
+      // change the background color
+      clearScreen(COLOR_GREEN);
+      // change state
       state = 1;
     }else if(lives == 0){
       // this will be nested once I add collisions 
