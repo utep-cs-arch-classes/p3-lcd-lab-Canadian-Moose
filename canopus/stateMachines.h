@@ -5,7 +5,6 @@
 
 int state;
 int lives; 
-//short redrawScreen;
 
 void play_game(void);
 void you_win(void);

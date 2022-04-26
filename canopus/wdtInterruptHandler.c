@@ -5,6 +5,7 @@
 #include "lcddraw.h"
 #include "stateMachines.h"
 #include "draw_shapes.h"
+#include "buzzer.h"
 
 // function that handles interrupts
 // from the periodic timer
@@ -18,27 +19,31 @@ __interrupt_vec(WDT_VECTOR) WDT()
   second_count++;
 
   if (second_count >= second_limit) {
-    //this will check for collisions
-    //TODO
     // This will check for the win condition 
     if(frogRowStart <= 32){
-      // change the background color
+      // prep screen for win state
       clearScreen(COLOR_GREEN);
       // change state
       state = 1;
     }else if(lives == 0){
-      // this will be nested once I add collisions 
+      // this will be nested once I add collisions
+      // TODO
+      // prep screen for lose state 
+      clearScreen(COLOR_BLACK);
       state = 2;
     }else{
+      // default play game state 
       state = 0;
       draw_moving_shapes();
     }
 
+    buzzer_set_period(0);
+
     //reset the second counter 
     second_count = 0;
-    //redrawScreen = 1;
   }
-  
+
+  // This will constantly check for the state
     switch(state){
     case 0: 
       play_game();
