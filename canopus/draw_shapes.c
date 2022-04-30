@@ -25,7 +25,6 @@ int lane2colStart2 = 58;
 int lane2rowStart = 76;
 
 u_int background_color = COLOR_GRAY;
-int newGamePlus = 1;
 
 /* global constant variables for wheel sizes/ color */
 const int wheelh1 = 5;
