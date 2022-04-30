@@ -43,7 +43,7 @@ __interrupt_vec(WDT_VECTOR) WDT()
     second_count = 0;
   }
 
-  // This will constantly check for the state
+  /*/ This will constantly check for the state
     switch(state){
     case 0: 
       play_game();
@@ -56,7 +56,7 @@ __interrupt_vec(WDT_VECTOR) WDT()
       break;
     default:
       play_game();
-    } 
+    } */
   
   
 } 
