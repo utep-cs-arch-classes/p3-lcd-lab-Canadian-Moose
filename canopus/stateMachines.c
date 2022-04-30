@@ -9,6 +9,7 @@
 
 int state;
 int lives = 3; 
+int countdown = 0;
 
 void chooseState(void){
   switch(state){
@@ -103,6 +104,8 @@ void you_win(void){
     switch1_down = 0;
     state = 0;
   }
+  // increment counter 
+  countdown--;
 }
 
 
@@ -124,4 +127,6 @@ void game_over(void){
     init_shapes();
     state = 0;
   }
+  // increment counter 
+  countdown--;
 }
