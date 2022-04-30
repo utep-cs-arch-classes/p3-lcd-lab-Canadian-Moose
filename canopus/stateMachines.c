@@ -11,7 +11,7 @@
 
 int state;
 int lives = 3; 
-int countdown = 10;
+int countdown = 11;
 int newGamePlus = 1;
 int countdownBool = 0;
 
@@ -31,6 +31,14 @@ void chooseState(void){
     default:
       play_game();
     }
+}
+
+void newGame(void){
+  lives = 3;
+  countdown = 11;
+  init_shapes();
+  switch1_down = 0;
+  state = 0;
 }
 
 // State0 is the default game state
@@ -108,12 +116,8 @@ void you_win(void){
   drawString5x7(5, 139, " continue...", COLOR_RED, COLOR_GREEN);
   // listen to continue 
   if (switch1_down || switch2_down || switch3_down || switch4_down || countdown <= 0){
-    lives = 3;
     newGamePlus++;
-    countdown = 10;
-    init_shapes();
-    switch1_down = 0;
-    state = 0;
+    newGame();
   }
   // increment counter
   if (countdownBool){
@@ -130,7 +134,7 @@ void game_over(void){
   // add the game over text
   drawString5x7(5, 5, "GAME OVER", COLOR_RED, COLOR_BLACK);
   // arcade style countdown til reset
-  char counter[2];
+  char counter[1];
   drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_GREEN);
   // add press any button to continue text
   drawString5x7(5, 97, "Play again?", COLOR_WHITE, COLOR_BLACK);
@@ -139,11 +143,7 @@ void game_over(void){
   // call listener to reset the lives to 3
   if (switch1_down || switch2_down || switch3_down || switch4_down || countdown <= 0){
     buzzer_set_period(0);
-    lives = 3;
-    countdown = 10;
-    switch1_down = 0;
-    init_shapes();
-    state = 0;
+    newGame();
   }
   // increment counter 
   if (countdownBool){
