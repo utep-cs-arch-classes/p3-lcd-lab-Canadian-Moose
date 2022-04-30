@@ -22,7 +22,12 @@ int main() {
     //begin the timer 
     enableWDTInterrupts();
 
-    // CPU off, GIE on
-    or_sr(0x18);
+    // forever 
+    while (1){
+        switch_interrupt_handler();
+        chooseState();
+        // CPU off, GIE on
+        or_sr(0x18);
+    }
 
 }
