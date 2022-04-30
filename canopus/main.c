@@ -22,12 +22,12 @@ int main() {
     //begin the timer 
     enableWDTInterrupts();
 
-    // forever 
+    /*/ forever loop refuses to work
     while (1){
         switch_interrupt_handler();
-        chooseState();
+        chooseState();*/
         // CPU off, GIE on
         or_sr(0x18);
-    }
+    
 
 }
