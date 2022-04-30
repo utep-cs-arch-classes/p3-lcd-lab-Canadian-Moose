@@ -6,6 +6,7 @@
 int state;
 int lives; 
 
+void chooseState(void);
 void play_game(void);
 void you_win(void);
 void game_over(void);
