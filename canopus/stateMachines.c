@@ -1,5 +1,7 @@
 #include <msp430.h>
-#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "lcdutils.h"
 #include "lcddraw.h"
 #include "stateMachines.h"
@@ -9,7 +11,7 @@
 
 int state;
 int lives = 3; 
-int countdown = 0;
+int countdown = 10;
 
 void chooseState(void){
   switch(state){
@@ -95,13 +97,17 @@ void play_game(void){
 void you_win(void){
   // add the YOU WIN text to the screen
   drawString5x7(5, 32, "You Win!!", COLOR_PURPLE, COLOR_GREEN);
+  // arcade style countdown til reset
+  char counter[3];
+  drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_GREEN); 
   // add the 'press any button to continue'
   drawString5x7(5, 97, "Play again?", COLOR_RED, COLOR_GREEN);
   drawString5x7(5, 129, "Press any button to", COLOR_RED, COLOR_GREEN);
   drawString5x7(5, 139, " continue...", COLOR_RED, COLOR_GREEN);
   // listen to continue 
-  if (switch1_down){
+  if (switch1_down || switch2_down || switch3_down || switch4_down || countdown <= 0){
     lives = 3;
+    newGamePlus++;
     init_shapes();
     switch1_down = 0;
     state = 0;
@@ -117,12 +123,15 @@ void game_over(void){
   buzzer_set_period(10000);
   // add the game over text
   drawString5x7(5, 5, "GAME OVER", COLOR_RED, COLOR_BLACK);
+  // arcade style countdown til reset
+  char counter[3];
+  drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_GREEN);
   // add press any button to continue text
   drawString5x7(5, 97, "Play again?", COLOR_WHITE, COLOR_BLACK);
   drawString5x7(5, 129, "Press any button to", COLOR_WHITE, COLOR_BLACK);
   drawString5x7(5, 139, " continue...", COLOR_WHITE, COLOR_BLACK);
   // call listener to reset the lives to 3
-  if (switch1_down || switch2_down || switch3_down || switch4_down){
+  if (switch1_down || switch2_down || switch3_down || switch4_down || countdown <= 0){
     buzzer_set_period(0);
     lives = 3;
     switch1_down = 0;

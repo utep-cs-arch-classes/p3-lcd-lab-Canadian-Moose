@@ -13,7 +13,7 @@
 void
 __interrupt_vec(WDT_VECTOR) WDT()
 {
-  const  int second_limit = 100;
+  const  int second_limit = 250;
   static int second_count = 0;
   
   second_count++;
@@ -34,34 +34,17 @@ __interrupt_vec(WDT_VECTOR) WDT()
     }else{
       // default play game state 
       state = 0;
-      draw_moving_shapes();
+      draw_moving_shapes(newGamePlus);
     }
 
     buzzer_set_period(0);
 
     //reset the second counter 
     second_count = 0;
+  
+    // call state machine to choose the state 
+    chooseState();
   }
-
-  // call state machine to choose the state 
-  chooseState();
-  
-  /*/ This will constantly check for the state
-      *moved to stateMachine 
-    switch(state){
-    case 0: 
-      play_game();
-      break;
-    case 1:
-      you_win();
-      break;
-    case 2:
-      game_over();
-      break;
-    default:
-      play_game();
-    } */
-  
   
 } 
 

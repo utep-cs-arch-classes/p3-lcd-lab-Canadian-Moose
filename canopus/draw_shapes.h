@@ -30,6 +30,7 @@ const int wheelw2;
 const int wheelColor;
 
 extern u_int background_color;
+int newGamePlus;
 
 /* initializes shape positions */
 void init_shapes(void);
@@ -51,6 +52,6 @@ void lane2(int colorCar, int colorWheel);
 void lane3(int colorTruck, int colorWheel);
 
 /* handles erasing and updating all the shapes */
-void draw_moving_shapes(void);
+void draw_moving_shapes(int scaler);
 
 #endif // _DRAW_SHAPES_H_

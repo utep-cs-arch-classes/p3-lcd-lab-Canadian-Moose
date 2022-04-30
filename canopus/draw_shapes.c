@@ -25,6 +25,7 @@ int lane2colStart2 = 58;
 int lane2rowStart = 76;
 
 u_int background_color = COLOR_GRAY;
+int newGamePlus = 1;
 
 /* global constant variables for wheel sizes/ color */
 const int wheelh1 = 5;
@@ -225,7 +226,7 @@ void lane2(int colorCar, int colorWheel){
   fillRectangle(lane2colStart2+17, lane2rowStart+9, wheelw2, wheelh2, colorWheel);
 }
 
-void draw_moving_shapes(void){
+void draw_moving_shapes(int scaler){
   lane3(background_color, background_color);
   lane2(background_color, background_color);
   lane1(background_color, background_color);
@@ -234,26 +235,26 @@ void draw_moving_shapes(void){
   if (lane3colStart1 <= 0){
     lane3colStart1 = 88;
   }else{
-    lane3colStart1-=13;
+    lane3colStart1-=(15*scaler);
   }
   
   //Move Lane 2
   if (lane2colStart1 >= 88){
     lane2colStart1 = 0;
   }else{
-    lane2colStart1+=5;
+    lane2colStart1+=(7*scaler);
   }
   if (lane2colStart2 >= 88){
     lane2colStart2 = 0;
   }else{
-    lane2colStart2+=5;
+    lane2colStart2+=(7*scaler);
   }
   
   //Move Lane 1
   if (lane1colStart >= 88){
     lane1colStart = 0;
   }else{
-    lane1colStart+=1;
+    lane1colStart+=(3*scaler);
   }
 
   lane3(truckColor3, wheelColor);
