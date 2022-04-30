@@ -12,11 +12,13 @@ Upon loading the screen, the player will be presented with some lanes of `moving
 - press `switch 2` to move the frog `up`
 - press `switch 3` to move the frog `down`
 - press `switch 4` to move the frog `right`
-<br>The frog will make a `beep` when it is moved. 
+
+The frog will make a `beep` when it is moved. 
 
 Upon reaching the safe zone at the top of the screen, the win state will be triggered. 
 <br>A "You Win" message will be displayed and a countdown will begin. 
-<br>At the end of the countdown the game will reset `at a higher difficulty`, or the player can press `any switch` to end the countdown and reset the game. 
+<br>At the end of the countdown the game will reset `at a higher difficulty`, 
+<br>or the player can press `any switch` to end the countdown and reset the game. 
 
 Currently collisions haven't been implemented, so you can't lose! ;)
 <br>(The game over state is implemented but can not be reached currently)
