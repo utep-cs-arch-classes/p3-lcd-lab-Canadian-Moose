@@ -19,7 +19,7 @@ A "You Win" message will be displayed and a countdown will begin.
 At the end of the countdown the game will reset `at a higher difficulty`, or the player can press `any switch` to end the countdown and reset the game. 
 
 Currently collisions haven't been implemented, so you can't lose! ;)
-<The game over state is implemented but can not be reached currently> 
+(The game over state is implemented but can not be reached currently)
 
 ## Credits
 
