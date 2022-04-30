@@ -13,7 +13,7 @@
 void
 __interrupt_vec(WDT_VECTOR) WDT()
 {
-  const  int second_limit = 250;
+  const  int second_limit = 100;
   static int second_count = 0;
   
   second_count++;
@@ -36,15 +36,21 @@ __interrupt_vec(WDT_VECTOR) WDT()
       state = 0;
       draw_moving_shapes(newGamePlus);
     }
-
+    
+    // turn off the buzzer (you're welcome) 
     buzzer_set_period(0);
+    
+    // counter for countdown
+    if (state != 0){
+      countdownBool = 1;
+    }
 
     //reset the second counter 
     second_count = 0;
+  }
   
     // call state machine to choose the state 
     chooseState();
-  }
-  
+    
 } 
 

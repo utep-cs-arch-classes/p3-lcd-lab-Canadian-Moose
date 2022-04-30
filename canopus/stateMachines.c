@@ -13,6 +13,7 @@ int state;
 int lives = 3; 
 int countdown = 10;
 int newGamePlus = 1;
+int countdownBool = 0;
 
 void chooseState(void){
   switch(state){
@@ -99,7 +100,7 @@ void you_win(void){
   // add the YOU WIN text to the screen
   drawString5x7(5, 32, "You Win!!", COLOR_PURPLE, COLOR_GREEN);
   // arcade style countdown til reset
-  char counter[3];
+  char counter[1];
   drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_GREEN); 
   // add the 'press any button to continue'
   drawString5x7(5, 97, "Play again?", COLOR_RED, COLOR_GREEN);
@@ -109,12 +110,16 @@ void you_win(void){
   if (switch1_down || switch2_down || switch3_down || switch4_down || countdown <= 0){
     lives = 3;
     newGamePlus++;
+    countdown = 10;
     init_shapes();
     switch1_down = 0;
     state = 0;
   }
-  // increment counter 
-  countdown--;
+  // increment counter
+  if (countdownBool){
+    countdown--;
+    countdownBool = 0;
+  }
 }
 
 
@@ -125,7 +130,7 @@ void game_over(void){
   // add the game over text
   drawString5x7(5, 5, "GAME OVER", COLOR_RED, COLOR_BLACK);
   // arcade style countdown til reset
-  char counter[3];
+  char counter[2];
   drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_GREEN);
   // add press any button to continue text
   drawString5x7(5, 97, "Play again?", COLOR_WHITE, COLOR_BLACK);
@@ -135,10 +140,14 @@ void game_over(void){
   if (switch1_down || switch2_down || switch3_down || switch4_down || countdown <= 0){
     buzzer_set_period(0);
     lives = 3;
+    countdown = 10;
     switch1_down = 0;
     init_shapes();
     state = 0;
   }
   // increment counter 
-  countdown--;
+  if (countdownBool){
+    countdown--;
+    countdownBool = 0;
+  }
 }

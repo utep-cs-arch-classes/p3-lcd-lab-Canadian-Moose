@@ -6,6 +6,7 @@
 int state;
 int lives; 
 int newGamePlus;
+int countdownBool;
 
 void chooseState(void);
 void play_game(void);
