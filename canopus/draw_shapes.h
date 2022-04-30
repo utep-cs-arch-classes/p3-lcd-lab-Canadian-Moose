@@ -30,7 +30,6 @@ const int wheelw2;
 const int wheelColor;
 
 extern u_int background_color;
-int newGamePlus;
 
 /* initializes shape positions */
 void init_shapes(void);
