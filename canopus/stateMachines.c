@@ -10,6 +10,22 @@
 int state;
 int lives = 3; 
 
+void chooseState(void){
+  switch(state){
+    case 0: 
+      play_game();
+      break;
+    case 1:
+      you_win();
+      break;
+    case 2:
+      game_over();
+      break;
+    default:
+      play_game();
+    }
+}
+
 // State0 is the default game state
 void play_game(void){
   /* This will listen for the switches to move the frog */
