@@ -43,7 +43,11 @@ __interrupt_vec(WDT_VECTOR) WDT()
     second_count = 0;
   }
 
+  // call state machine to choose the state 
+  chooseState();
+  
   /*/ This will constantly check for the state
+      *moved to stateMachine 
     switch(state){
     case 0: 
       play_game();
