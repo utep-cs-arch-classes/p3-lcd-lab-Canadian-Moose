@@ -17,7 +17,7 @@ The frog will make a `beep` when it is moved.
 
 Upon reaching the safe zone at the top of the screen, the win state will be triggered. 
 <br>A "You Win" message will be displayed and a countdown will begin. 
-<br>At the end of the countdown the game will reset `at a higher difficulty`, 
+<br>At the end of the countdown the game will reset at a `higher difficulty`, 
 <br>or the player can press `any switch` to end the countdown and reset the game. 
 
 Currently collisions haven't been implemented, so you can't lose! ;)
