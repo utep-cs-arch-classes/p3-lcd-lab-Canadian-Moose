@@ -12,6 +12,7 @@
 int state;
 int lives = 3; 
 int countdown = 10;
+int newGamePlus = 1;
 
 void chooseState(void){
   switch(state){
