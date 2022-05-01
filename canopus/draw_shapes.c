@@ -260,3 +260,27 @@ void draw_moving_shapes(int scaler){
   lane2(carColor2, wheelColor);
   lane1(truckColor1, wheelColor);
 }
+
+void drawWinScreen(void){
+  // add the YOU WIN text to the screen
+  drawString5x7(5, 32, "You Win!!", COLOR_PURPLE, COLOR_GREEN);
+  // arcade style countdown til reset
+  char counter[1];
+  drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_GREEN); 
+  // add the 'press any button to continue'
+  drawString5x7(5, 97, "Play again?", COLOR_RED, COLOR_GREEN);
+  drawString5x7(5, 129, "Press any button to", COLOR_RED, COLOR_GREEN);
+  drawString5x7(5, 139, " continue...", COLOR_RED, COLOR_GREEN);
+}
+
+void drawGameOver(void){
+  // add the game over text
+  drawString5x7(5, 5, "GAME OVER", COLOR_RED, COLOR_BLACK);
+  // arcade style countdown til reset
+  char counter[1];
+  drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_GREEN);
+  // add press any button to continue text
+  drawString5x7(5, 97, "Play again?", COLOR_WHITE, COLOR_BLACK);
+  drawString5x7(5, 129, "Press any button to", COLOR_WHITE, COLOR_BLACK);
+  drawString5x7(5, 139, " continue...", COLOR_WHITE, COLOR_BLACK);
+}
