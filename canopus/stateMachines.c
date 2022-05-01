@@ -105,15 +105,8 @@ void play_game(void){
 
 // State1 is the win screen with text
 void you_win(void){
-  // add the YOU WIN text to the screen
-  drawString5x7(5, 32, "You Win!!", COLOR_PURPLE, COLOR_GREEN);
-  // arcade style countdown til reset
-  char counter[1];
-  drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_GREEN); 
-  // add the 'press any button to continue'
-  drawString5x7(5, 97, "Play again?", COLOR_RED, COLOR_GREEN);
-  drawString5x7(5, 129, "Press any button to", COLOR_RED, COLOR_GREEN);
-  drawString5x7(5, 139, " continue...", COLOR_RED, COLOR_GREEN);
+  // call draw win screen from draw_shapes 
+  drawWinScreen(); 
   // listen to continue 
   if (switch1_down || switch2_down || switch3_down || switch4_down || countdown <= 0){
     newGamePlus++;
@@ -131,15 +124,8 @@ void you_win(void){
 void game_over(void){
   // death buzzer
   buzzer_set_period(10000);
-  // add the game over text
-  drawString5x7(5, 5, "GAME OVER", COLOR_RED, COLOR_BLACK);
-  // arcade style countdown til reset
-  char counter[1];
-  drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_GREEN);
-  // add press any button to continue text
-  drawString5x7(5, 97, "Play again?", COLOR_WHITE, COLOR_BLACK);
-  drawString5x7(5, 129, "Press any button to", COLOR_WHITE, COLOR_BLACK);
-  drawString5x7(5, 139, " continue...", COLOR_WHITE, COLOR_BLACK);
+  // call draw game over screen from draw_shapes 
+  drawGameOver();
   // call listener to reset the lives to 3
   if (switch1_down || switch2_down || switch3_down || switch4_down || countdown <= 0){
     buzzer_set_period(0);
