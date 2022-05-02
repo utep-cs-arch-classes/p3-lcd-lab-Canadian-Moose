@@ -22,7 +22,7 @@ countdownBool:  .word  0
 
 # void chooseState(void)
 chooseState: 
-	jmp_table:  .word case_0
+	jump_table:  .word case_0
 		        .word case_1
 		        .word case_2
 	
@@ -81,7 +81,7 @@ play_game:
 		sub.w #32, &frogRowStart
 		mov.w &frogColor, r12
 		CALL frog
-		mov.w #0, switch2_down
+		mov.b #0, switch2_down
 	end_2:
 	
 	# switch 3
@@ -93,7 +93,7 @@ play_game:
 		add.w #32, &frogRowStart
 		mov.w &frogColor, r12
 		CALL frog
-		mov.w #0, switch3_down
+		mov.b #0, switch3_down
 	end_3:
 	
 	# switch 4
@@ -105,7 +105,7 @@ play_game:
 		add.w #10, &frogColStart
 		mov.w &frogColor, r12
 		CALL frog
-		mov.w #0, switch4_down
+		mov.b #0, switch4_down
 	end_4:
 pop r0
 
