@@ -292,7 +292,7 @@ int collision_check(void){
 			collisionTrue();
 			collision = 1; 
 		}
-		if ((frogColStart < lane3colEnd && frogColStart > lane3colStart1){
+		if (frogColStart < lane3colEnd && frogColStart > lane3colStart1){
 			collisionTrue();
 			collision = 1; 
 		}
