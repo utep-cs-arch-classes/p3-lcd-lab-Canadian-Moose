@@ -35,19 +35,19 @@ chooseState:
 	
 	case_0:
 		CALL play_game
-		jmp end
+		jmp end_state
 	case_1: 
 		CALL switch_interrupt_handler
 		CALL you_win
-		jmp end
+		jmp end_state
 	case_2:
 		CALL switch_interrupt_handler
 		CALL game_over
-		jmp end
+		jmp end_state
 	default:
 		CALL play_game
 	
-	end: 
+	end_state: 
 pop r0
 
 # void newGame(void)
