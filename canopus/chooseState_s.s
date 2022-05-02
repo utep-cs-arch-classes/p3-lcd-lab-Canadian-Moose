@@ -6,9 +6,9 @@
 	.extern  state
 
 chooseState: 
-jump_table:  .word case_0
-	.word case_1
-	.word case_2
+	jump_table:  .word case_0
+		.word case_1
+		.word case_2
 	
 	mov.w &state, r12
 	add.w r12, r12
