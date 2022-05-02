@@ -26,8 +26,8 @@ chooseState:
 		        .word case_1
 		        .word case_2
 	
-	cmp &state, #2
-	jn default
+	#cmp &state, #2
+	#jn default
 	
 	mov.w &state, r12
 	add.w r12, r12
@@ -43,12 +43,12 @@ chooseState:
 	case_2:
 		CALL switch_interrupt_handler
 		CALL game_over
-		jmp end_state
-	default:
-		CALL play_game
+		#jmp end_state
+	#default:
+		#CALL play_game
 	
 	end_state: 
-pop r0
+	pop r0
 
 # void newGame(void)
 newGame:
@@ -56,7 +56,7 @@ newGame:
 	mov.w #11, &countdown
 	CALL init_shapes
 	mov.w #0, state
-pop r0
+	pop r0
 
 # void play_game(void) 
 play_game: 
@@ -107,7 +107,7 @@ play_game:
 		CALL frog
 		mov.b #0, switch4_down
 	end_4:
-pop r0
+	pop r0
 
 # void you_win(void)
 you_win: 
@@ -133,7 +133,7 @@ you_win:
 		sub.w #1, &countdown
 		mov.w #0, &countdownBool
 	end_you_win: 
-pop r0
+	pop r0
 
 # void game_over(void)
 game_over: 
@@ -162,4 +162,4 @@ game_over:
 		sub.w #1, &countdown
 		mov.w #0, &countdownBool
 	end_go: 
-pop r0
+	pop r0
