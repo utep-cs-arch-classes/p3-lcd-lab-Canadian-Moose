@@ -14,7 +14,7 @@ jump_table:
 chooseState: 
 	mov.w &state, r12
 	add.w r12, r12
-	mov.w jump_table(r12), pc
+	mov.w jump_table(r12), r0
 	
 case_0:
 	CALL play_game
