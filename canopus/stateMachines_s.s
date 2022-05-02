@@ -112,15 +112,15 @@ pop r0
 # void you_win(void)
 you_win: 
 	CALL drawWinScreen
-	cmp &switch1_down, #0
+	cmp.b &switch1_down, #0
 	jz if_win
-	cmp &switch2_down, #0
+	cmp.b &switch2_down, #0
 	jz if_win
-	cmp &switch3_down, #0
+	cmp.b &switch3_down, #0
 	jz if_win
-	cmp &switch4_down, #0
+	cmp.b &switch4_down, #0
 	jz if_win
-	cmp &countdown, #0 
+	cmp.b &countdown, #0 
 	jn endif_win
 	
 	if_win: 
