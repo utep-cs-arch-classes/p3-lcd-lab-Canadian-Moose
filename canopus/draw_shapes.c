@@ -6,6 +6,7 @@
 #include "lcddraw.h"
 #include "draw_shapes.h"
 #include "stateMachines.h"
+#include "buzzer.h"
 
 /* global vars for the shape positions */
 //hearts 
@@ -275,6 +276,9 @@ void drawWinScreen(void){
   drawString5x7(5, 97, "Play again?", COLOR_RED, COLOR_GREEN);
   drawString5x7(5, 129, "Press any button to", COLOR_RED, COLOR_GREEN);
   drawString5x7(5, 139, " continue...", COLOR_RED, COLOR_GREEN);
+  if (countdown % 2 == 0){
+    buzzer_set_period(100);
+  }
 }
 
 void drawGameOver(void){
