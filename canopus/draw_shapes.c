@@ -286,24 +286,39 @@ int collision_check(void){
 	
 	// return variable
 	int collision = 0; 
-	heart2(COLOR_PALE_GREEN);
+
 	if (frogRowStart > row3End && frogRowStart < row3Start){
-		if ( (frogColEnd > lane3colStart1 && frogColEnd < lane3colEnd) || (frogColStart < lane3colEnd && frogColStart > lane3colStart1) ){
+		if (frogColEnd > lane3colStart1 && frogColEnd < lane3colEnd){
+			collisionTrue();
+			collision = 1; 
+		}
+		if ((frogColStart < lane3colEnd && frogColStart > lane3colStart1){
 			collisionTrue();
 			collision = 1; 
 		}
 	}else if (frogRowStart > row2End && frogRowStart < row2Start){
-		if ( (frogColEnd > lane2colStart1 && frogColEnd < lane2colEnd1) || (frogColStart < lane2colEnd1 && frogColStart > lane2colStart1) ){
+		if (frogColEnd > lane2colStart1 && frogColEnd < lane2colEnd1){
 			collisionTrue(); 
 			collision = 1; 
 		}
-		if ( (frogColEnd > lane2colStart2 && frogColEnd < lane2colEnd2) || (frogColStart < lane2colEnd2 && frogColStart > lane2colStart2) ){
+		if (frogColStart < lane2colEnd1 && frogColStart > lane2colStart1){
+			collisionTrue(); 
+			collision = 1; 
+		}
+		if (frogColEnd > lane2colStart2 && frogColEnd < lane2colEnd2){
 			collisionTrue();
 			collision = 1; 
 		}
-		
+		if (frogColStart < lane2colEnd2 && frogColStart > lane2colStart2){
+			collisionTrue();
+			collision = 1; 
+		}
 	}else if (frogRowStart > row1End && frogRowStart < row1Start){
-		if ( (frogColEnd > lane1colStart && frogColEnd < lane1colEnd) || (frogColStart < lane1colEnd && frogColStart > lane1colStart) ){
+		if (frogColEnd > lane1colStart && frogColEnd < lane1colEnd){
+			collisionTrue();
+			collision = 1; 
+		}
+		if (frogColStart < lane1colEnd && frogColStart > lane1colStart){
 			collisionTrue();
 			collision = 1; 
 		}
