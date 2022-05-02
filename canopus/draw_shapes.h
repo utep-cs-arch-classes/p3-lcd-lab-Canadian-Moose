@@ -52,6 +52,7 @@ void lane3(int colorTruck, int colorWheel);
 
 /* handles erasing and updating all the shapes */
 void draw_moving_shapes(int scaler);
+int collision_check(void);
 
 void drawWinScreen(void);
 void drawGameOver(void);
