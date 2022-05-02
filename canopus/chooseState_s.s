@@ -1,10 +1,10 @@
-	.arch msp430g2553
-	.p2align 1,0
-	.text
+.text
+	.balign 2
 	.global chooseState
+	.text
 	
-# variables 
-.extern  state
+	# variables 
+	.extern  state
 
 # void chooseState(void)
 chooseState: 
