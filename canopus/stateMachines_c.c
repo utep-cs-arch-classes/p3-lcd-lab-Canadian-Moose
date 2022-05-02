@@ -47,7 +47,7 @@ void play_game(void){
   // Switch 1 : LEFT 
   if (switch1_down){
     // make a beep
-    buzzer_set_period(1000);
+    buzzer_set_period(2000);
     // color in old frog
     eraseFrog();
     // move frog left 
@@ -61,7 +61,7 @@ void play_game(void){
   // Switch 2 : UP
   if (switch2_down){
     // make a beep
-    buzzer_set_period(1000);
+    buzzer_set_period(2000);
     // color in old frog
     eraseFrog();
     // move frog left 
@@ -75,7 +75,7 @@ void play_game(void){
   // Switch 3 : DOWN
   if (switch3_down){
     // make a beep
-    buzzer_set_period(1000);
+    buzzer_set_period(2000);
     // color in old frog
     eraseFrog();
     // move frog left 
@@ -89,7 +89,7 @@ void play_game(void){
   // Switch 4 : RIGHT
   if (switch4_down){
     // make a beep
-    buzzer_set_period(1000);
+    buzzer_set_period(2000);
     // color in old frog
     eraseFrog();
     // move frog left 
