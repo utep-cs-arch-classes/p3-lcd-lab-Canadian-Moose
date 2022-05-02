@@ -137,6 +137,8 @@ pop r0
 
 # void game_over(void)
 game_over: 
+	mov.w #10000, r12
+	CALL buzzer_set_period
 	CALL drawGameOver
 	cmp.b &switch1_down, #0
 	jz if_go
