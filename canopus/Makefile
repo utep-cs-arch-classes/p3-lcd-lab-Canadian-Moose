@@ -13,19 +13,19 @@ all: canopus_c.elf canopus_s.elf
 #additional rules for files
 canopus_c.elf: ${COMMON_OBJECTS} stateMachines_c.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd 
-	
+
 canopus_s.elf: ${COMMON_OBJECTS} stateMachines_s.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd 
 
 load_c: canopus_c.elf
 	msp430loader.sh $^
-	
+
 load_s: canopus_s.elf
 	msp430loader.sh $^
 
 clean:
 	rm -f *.o *.elf \#* \~*
-	
-stateMachines_c.o: stateMachines.c
 
-stateMachines_s.o: stateMachines.s
+stateMachines_c.o: stateMachines_c.c
+
+stateMachines_s.o: stateMachines_s.s

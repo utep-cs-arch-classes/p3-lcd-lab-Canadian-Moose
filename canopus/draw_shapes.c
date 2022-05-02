@@ -1,7 +1,11 @@
 #include <msp430.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "lcdutils.h"
 #include "lcddraw.h"
 #include "draw_shapes.h"
+#include "stateMachines.h"
 
 /* global vars for the shape positions */
 //hearts 
