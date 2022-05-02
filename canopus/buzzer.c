@@ -25,7 +25,12 @@ void buzzer_set_period(short cycles)
   CCR1 = cycles >> 1;		/* one half cycle */
 }
 
-
+void buzzer_set_period2(short cycles)
+/* buzzer clock = 2MHz.  (period of 1k results in 2kHz tone) */
+{
+  CCR0 = cycles; 
+  CCR1 = cycles >> 10;		/* one half cycle */
+}
     
     
   
