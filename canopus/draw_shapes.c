@@ -266,6 +266,56 @@ void draw_moving_shapes(int scaler){
   lane1(truckColor1, wheelColor);
 }
 
+int collision_check(void){
+	// these variables need to be recreated every call 
+  int frogColEnd = frogColStart + 11;
+	int frogRowEnd = frogRowStart + 10;
+	
+	int lane1colEnd = lane1colStart + 39;
+	int row1Start = 32;
+	int row1End = 63;
+	
+	int lane3colEnd = lane3colStart1 + 39;
+	int row3Start = 86;
+	int row3End = 127;
+	
+	int lane2colEnd1 = lane2colStart1 + 26;
+	int lane2colEnd2 = lane2colStart2 + 26;
+	int row2Start = 64;
+	int row2End = 85;
+	
+	// return variable
+	int collision = 0; 
+	
+	if (frogRowStart > row3End && frogRowStart < row3Start){
+		if ( (frogColEnd > lane3colStart1 && frogColEnd < lane3colEnd) || (frogColStart < lane3colEnd && frogColStart > lane3colStart1) ){
+			buzzer_set_period(10000);
+			lives -= 1; 
+			collision = 1; 
+		}
+	}else if (frogRowStart > row2End && frogRowStart < row2Start){
+		if ( (frogColEnd > lane2colStart1 && frogColEnd < lane2colEnd1) || (frogColStart < lane2colEnd1 && frogColStart > lane2colStart1) ){
+			buzzer_set_period(10000);
+			lives -= 1; 
+			collision = 1; 
+		}
+		if ( (frogColEnd > lane2colStart2 && frogColEnd < lane2colEnd2) || (frogColStart < lane2colEnd2 && frogColStart > lane2colStart2) ){
+			buzzer_set_period(10000);
+			lives -= 1; 
+			collision = 1; 
+		}
+		
+	}else if (frogRowStart > row1End && frogRowStart < row1Start){
+		if ( (frogColEnd > lane1colStart && frogColEnd < lane1colEnd) || (frogColStart < lane1colEnd && frogColStart > lane1colStart) ){
+			buzzer_set_period(10000);
+			lives -= 1; 
+			collision = 1; 
+		}
+	}
+	
+	return collision; 
+}
+
 void drawWinScreen(void){
   // add the YOU WIN text to the screen
   drawString5x7(5, 32, "You Win!!", COLOR_PURPLE, COLOR_GREEN);
