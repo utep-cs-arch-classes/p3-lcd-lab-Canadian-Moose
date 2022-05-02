@@ -4,14 +4,14 @@
 	.text
 	.global 
 	
-//globally declared variables 
+# globally declared variables 
 state:          .word  
 lives:          .word  3
 countdown:      .word  11
 newGamePlus:    .word  1
 countdownBool:  .word  0
 
-// imported variables 
+# imported variables 
 .extern switch1_down
 .extern switch2_down
 .extern switch3_down
@@ -20,7 +20,7 @@ countdownBool:  .word  0
 .extern frogRowStart
 .extern frogColor
 
-// void chooseState(void)
+# void chooseState(void)
 chooseState: 
 	jmp_table:  .word case_0
 		        .word case_1
@@ -50,7 +50,7 @@ chooseState:
 	end: 
 pop r0
 
-// void newGame(void)
+# void newGame(void)
 newGame:
 	mov.w #3, &lives
 	mov.w #11, &countdown
@@ -58,9 +58,9 @@ newGame:
 	mov.w #0, state
 pop r0
 
-// void play_game(void) 
+# void play_game(void) 
 play_game: 
-	// switch 1
+	# switch 1
 	cmp &switch1_down, #0
 	jne end_1
 		mov.w #1000, r12
@@ -72,7 +72,7 @@ play_game:
 		mov.w #0, switch1_down
 	end_1:
 	
-	// switch 2
+	# switch 2
 	cmp &switch2_down, #0
 	jne end_2
 		mov.w #1000, r12
@@ -84,7 +84,7 @@ play_game:
 		mov.w #0, switch2_down
 	end_2:
 	
-	// switch 3
+	# switch 3
 	cmp &switch3_down, #0
 	jne end_3
 		mov.w #1000, r12
@@ -96,7 +96,7 @@ play_game:
 		mov.w #0, switch3_down
 	end_3:
 	
-	// switch 4
+	# switch 4
 	cmp &switch4_down, #0
 	jne end_4
 		mov.w #1000, r12
@@ -109,7 +109,7 @@ play_game:
 	end_4:
 pop r0
 
-// void you_win(void)
+# void you_win(void)
 you_win: 
 	CALL drawWinScreen
 	cmp &switch1_down, #0
@@ -135,7 +135,7 @@ you_win:
 	end: 
 pop r0
 
-// void game_over(void)
+# void game_over(void)
 game_over: 
 	CALL drawGameOver
 	cmp &switch1_down, #0
