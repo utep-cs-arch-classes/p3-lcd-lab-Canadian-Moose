@@ -289,22 +289,22 @@ int collision_check(void){
 	
 	if (frogRowStart > row3End && frogRowStart < row3Start){
 		if ( (frogColEnd > lane3colStart1 && frogColEnd < lane3colEnd) || (frogColStart < lane3colEnd && frogColStart > lane3colStart1) ){
-			collision();
+			collisionTrue();
 			collision = 1; 
 		}
 	}else if (frogRowStart > row2End && frogRowStart < row2Start){
 		if ( (frogColEnd > lane2colStart1 && frogColEnd < lane2colEnd1) || (frogColStart < lane2colEnd1 && frogColStart > lane2colStart1) ){
-			collision(); 
+			collisionTrue(); 
 			collision = 1; 
 		}
 		if ( (frogColEnd > lane2colStart2 && frogColEnd < lane2colEnd2) || (frogColStart < lane2colEnd2 && frogColStart > lane2colStart2) ){
-			collision();
+			collisionTrue();
 			collision = 1; 
 		}
 		
 	}else if (frogRowStart > row1End && frogRowStart < row1Start){
 		if ( (frogColEnd > lane1colStart && frogColEnd < lane1colEnd) || (frogColStart < lane1colEnd && frogColStart > lane1colStart) ){
-			collision();
+			collisionTrue();
 			collision = 1; 
 		}
 	}
@@ -312,7 +312,7 @@ int collision_check(void){
 	return collision; 
 }
 
-void collision(void){
+void collisionTrue(void){
 	buzzer_set_period(10000);
 	lives -= 1; 
 	eraseFrog();
