@@ -61,7 +61,7 @@ pop r0
 # void play_game(void) 
 play_game: 
 	# switch 1
-	cmp &switch1_down, #0
+	cmp.b &switch1_down, #0
 	jne end_1
 		mov.w #1000, r12
 		CALL buzzer_set_period
@@ -73,7 +73,7 @@ play_game:
 	end_1:
 	
 	# switch 2
-	cmp &switch2_down, #0
+	cmp.b &switch2_down, #0
 	jne end_2
 		mov.w #1000, r12
 		CALL buzzer_set_period
@@ -85,7 +85,7 @@ play_game:
 	end_2:
 	
 	# switch 3
-	cmp &switch3_down, #0
+	cmp.b &switch3_down, #0
 	jne end_3
 		mov.w #1000, r12
 		CALL buzzer_set_period
@@ -97,7 +97,7 @@ play_game:
 	end_3:
 	
 	# switch 4
-	cmp &switch4_down, #0
+	cmp.b &switch4_down, #0
 	jne end_4
 		mov.w #1000, r12
 		CALL buzzer_set_period
@@ -120,7 +120,7 @@ you_win:
 	jz if_win
 	cmp.b &switch4_down, #0
 	jz if_win
-	cmp.b &countdown, #0 
+	cmp &countdown, #0 
 	jn endif_win
 	
 	if_win: 
@@ -138,13 +138,13 @@ pop r0
 # void game_over(void)
 game_over: 
 	CALL drawGameOver
-	cmp &switch1_down, #0
+	cmp.b &switch1_down, #0
 	jz if_go
-	cmp &switch2_down, #0
+	cmp.b &switch2_down, #0
 	jz if_go
-	cmp &switch3_down, #0
+	cmp.b &switch3_down, #0
 	jz if_go
-	cmp &switch4_down, #0
+	cmp.b &switch4_down, #0
 	jz if_go
 	cmp &countdown, #0 
 	jn endif_go
