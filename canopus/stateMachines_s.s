@@ -22,9 +22,9 @@ countdownBool:  .word  0
 
 # void chooseState(void)
 chooseState: 
-	jump_table:  .word case_0
-		     .word case_1
-		     .word case_2
+jump_table:  .word case_0
+	.word case_1
+	.word case_2
 	
 	cmp &state, #2
 	jl default
@@ -33,22 +33,22 @@ chooseState:
 	add.w r12, r12
 	mov.w jump_table(r12), pc
 	
-	case_0:
-		CALL play_game
-		jmp end_state
-	case_1: 
-		CALL switch_interrupt_handler
-		CALL you_win
-		jmp end_state
-	case_2:
-		CALL switch_interrupt_handler
-		CALL game_over
-		jmp end_state
-	default:
-		CALL play_game
+case_0:
+	CALL play_game
+	jmp end_state
+case_1: 
+	CALL switch_interrupt_handler
+	CALL you_win
+	jmp end_state
+case_2:
+	CALL switch_interrupt_handler
+	CALL game_over
+	jmp end_state
+default:
+	CALL play_game
 	
-	end_state: 
-	pop r0
+end_state: 
+pop r0
 
 # void newGame(void)
 newGame:
@@ -70,7 +70,7 @@ play_game:
 		mov.w &frogColor, r12
 		CALL frog
 		mov.w #0, switch1_down
-	end_1:
+end_1:
 	
 	# switch 2
 	cmp.b &switch2_down, #0
@@ -82,7 +82,7 @@ play_game:
 		mov.w &frogColor, r12
 		CALL frog
 		mov.b #0, switch2_down
-	end_2:
+end_2:
 	
 	# switch 3
 	cmp.b &switch3_down, #0
@@ -94,7 +94,7 @@ play_game:
 		mov.w &frogColor, r12
 		CALL frog
 		mov.b #0, switch3_down
-	end_3:
+end_3:
 	
 	# switch 4
 	cmp.b &switch4_down, #0
@@ -106,8 +106,8 @@ play_game:
 		mov.w &frogColor, r12
 		CALL frog
 		mov.b #0, switch4_down
-	end_4:
-	pop r0
+end_4:
+pop r0
 
 # void you_win(void)
 you_win: 
@@ -123,17 +123,17 @@ you_win:
 	cmp &countdown, #0 
 	jn endif_win
 	
-	if_win: 
-		add.w #1, &newGamePlus
-		CALL newGame
+if_win: 
+	add.w #1, &newGamePlus
+	CALL newGame
 	
-	endif_win:
+endif_win:
 	cmp countdownBool, #1
 	jne end_you_win 
 		sub.w #1, &countdown
 		mov.w #0, &countdownBool
-	end_you_win: 
-	pop r0
+end_you_win: 
+pop r0
 
 # void game_over(void)
 game_over: 
@@ -151,15 +151,15 @@ game_over:
 	cmp &countdown, #0 
 	jn endif_go
 	
-	if_go: 
-		mov.w #0, r12
-		CALL buzzer_set_period
-		CALL newGame
+if_go: 
+	mov.w #0, r12
+	CALL buzzer_set_period
+	CALL newGame
 	
-	endif_go:
+endif_go:
 	cmp countdownBool, #1
 	jne end_go
 		sub.w #1, &countdown
 		mov.w #0, &countdownBool
-	end_go: 
-	pop r0
+end_go: 
+pop r0
