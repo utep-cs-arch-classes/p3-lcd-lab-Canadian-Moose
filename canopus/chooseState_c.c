@@ -1,5 +1,6 @@
 #include <msp430.h>
 #include "stateMachines.h"
+#include "switches.h"
 
 void chooseState(void){
   switch(state){
