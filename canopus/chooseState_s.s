@@ -3,17 +3,12 @@
 	.global chooseState
 	.text
 	
-	# variables 
 	.extern  state
 
-# void chooseState(void)
 chooseState: 
 jump_table:  .word case_0
 	.word case_1
 	.word case_2
-	
-	cmp &state, #2
-	jl default
 	
 	mov.w &state, r12
 	add.w r12, r12
@@ -30,8 +25,6 @@ case_2:
 	CALL switch_interrupt_handler
 	CALL game_over
 	jmp end_state
-default:
-	CALL play_game
 	
 end_state: 
 pop r0
