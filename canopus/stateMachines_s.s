@@ -23,8 +23,8 @@ countdownBool:  .word  0
 # void chooseState(void)
 chooseState: 
 	jump_table:  .word case_0
-		        .word case_1
-		        .word case_2
+		     .word case_1
+		     .word case_2
 	
 	cmp &state, #2
 	jl default
