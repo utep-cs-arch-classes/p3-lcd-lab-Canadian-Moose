@@ -268,7 +268,7 @@ void draw_moving_shapes(int scaler){
 
 int collision_check(void){
 	// these variables need to be recreated every call 
-  int frogColEnd = frogColStart + 11;
+	int frogColEnd = frogColStart + 11;
 	int frogRowEnd = frogRowStart + 10;
 	
 	int lane1colEnd = lane1colStart + 39;
@@ -289,31 +289,43 @@ int collision_check(void){
 	
 	if (frogRowStart > row3End && frogRowStart < row3Start){
 		if ( (frogColEnd > lane3colStart1 && frogColEnd < lane3colEnd) || (frogColStart < lane3colEnd && frogColStart > lane3colStart1) ){
-			buzzer_set_period(10000);
-			lives -= 1; 
+			collision();
 			collision = 1; 
 		}
 	}else if (frogRowStart > row2End && frogRowStart < row2Start){
 		if ( (frogColEnd > lane2colStart1 && frogColEnd < lane2colEnd1) || (frogColStart < lane2colEnd1 && frogColStart > lane2colStart1) ){
-			buzzer_set_period(10000);
-			lives -= 1; 
+			collision(); 
 			collision = 1; 
 		}
 		if ( (frogColEnd > lane2colStart2 && frogColEnd < lane2colEnd2) || (frogColStart < lane2colEnd2 && frogColStart > lane2colStart2) ){
-			buzzer_set_period(10000);
-			lives -= 1; 
+			collision();
 			collision = 1; 
 		}
 		
 	}else if (frogRowStart > row1End && frogRowStart < row1Start){
 		if ( (frogColEnd > lane1colStart && frogColEnd < lane1colEnd) || (frogColStart < lane1colEnd && frogColStart > lane1colStart) ){
-			buzzer_set_period(10000);
-			lives -= 1; 
+			collision();
 			collision = 1; 
 		}
 	}
 	
 	return collision; 
+}
+
+void collision(void){
+	buzzer_set_period(10000);
+	lives -= 1; 
+	eraseFrog();
+	frogColStart = 58;
+	frogRowStart = 132;
+	frog(frogColor);
+	if (lives == 2){
+		heart1(COLOR_PALE_GREEN);
+	}else if(lives == 1){
+		heart2(COLOR_PALE_GREEN);
+	}else if(lives == 0){
+		heart3(COLOR_PALE_GREEN);
+	}
 }
 
 void drawWinScreen(void){
