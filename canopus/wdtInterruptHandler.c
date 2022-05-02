@@ -25,12 +25,12 @@ __interrupt_vec(WDT_VECTOR) WDT()
       clearScreen(COLOR_GREEN);
       // change state
       state = 1;
-    }else if(lives == 0){
-      // this will be nested once I add collisions
-      // TODO
-      // prep screen for lose state 
-      clearScreen(COLOR_BLACK);
-      state = 2;
+    }else if (collision_check()){
+      if(lives == 0){
+        // prep screen for lose state 
+        clearScreen(COLOR_BLACK);
+        state = 2;
+      }
     }else{
       // default play game state 
       state = 0;
