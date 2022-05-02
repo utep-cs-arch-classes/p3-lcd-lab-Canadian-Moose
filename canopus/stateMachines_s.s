@@ -2,7 +2,7 @@
 	.arch msp430g2553
 	.p2align 1,0
 	.text
-	.global 
+	.global chooseState
 	
 # globally declared variables 
 state:          .word  
@@ -113,51 +113,51 @@ pop r0
 you_win: 
 	CALL drawWinScreen
 	cmp &switch1_down, #0
-	jz if
+	jz if_win
 	cmp &switch2_down, #0
-	jz if
+	jz if_win
 	cmp &switch3_down, #0
-	jz if
+	jz if_win
 	cmp &switch4_down, #0
-	jz if
+	jz if_win
 	cmp &countdown, #0 
-	jn endif
+	jn endif_win
 	
-	if: 
+	if_win: 
 		add.w #1, &newGamePlus
 		CALL newGame
 	
-	endif:
+	endif_win:
 	cmp countdownBool, #1
-	jne end 
+	jne end_you_win 
 		sub.w #1, &countdown
 		mov.w #0, &countdownBool
-	end: 
+	end_you_win: 
 pop r0
 
 # void game_over(void)
 game_over: 
 	CALL drawGameOver
 	cmp &switch1_down, #0
-	jz if
+	jz if_go
 	cmp &switch2_down, #0
-	jz if
+	jz if_go
 	cmp &switch3_down, #0
-	jz if
+	jz if_go
 	cmp &switch4_down, #0
-	jz if
+	jz if_go
 	cmp &countdown, #0 
-	jn endif
+	jn endif_go
 	
-	if: 
+	if_go: 
 		mov.w #0, r12
 		CALL buzzer_set_period
 		CALL newGame
 	
-	endif:
+	endif_go:
 	cmp countdownBool, #1
-	jne end 
+	jne end_go
 		sub.w #1, &countdown
 		mov.w #0, &countdownBool
-	end: 
+	end_go: 
 pop r0
