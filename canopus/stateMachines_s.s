@@ -63,7 +63,7 @@ play_game:
 	# switch 1
 	cmp.b &switch1_down, #0
 	jne end_1
-		mov.w #1000, r12
+		mov.w #2000, r12
 		CALL buzzer_set_period
 		CALL eraseFrog
 		sub.w #10, &frogColStart
@@ -75,7 +75,7 @@ play_game:
 	# switch 2
 	cmp.b &switch2_down, #0
 	jne end_2
-		mov.w #1000, r12
+		mov.w #2000, r12
 		CALL buzzer_set_period
 		CALL eraseFrog
 		sub.w #32, &frogRowStart
@@ -87,7 +87,7 @@ play_game:
 	# switch 3
 	cmp.b &switch3_down, #0
 	jne end_3
-		mov.w #1000, r12
+		mov.w #2000, r12
 		CALL buzzer_set_period
 		CALL eraseFrog
 		add.w #32, &frogRowStart
@@ -99,7 +99,7 @@ play_game:
 	# switch 4
 	cmp.b &switch4_down, #0
 	jne end_4
-		mov.w #1000, r12
+		mov.w #2000, r12
 		CALL buzzer_set_period
 		CALL eraseFrog
 		add.w #10, &frogColStart
