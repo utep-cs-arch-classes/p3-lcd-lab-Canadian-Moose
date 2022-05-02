@@ -277,7 +277,7 @@ void drawWinScreen(void){
   drawString5x7(5, 129, "Press any button to", COLOR_RED, COLOR_GREEN);
   drawString5x7(5, 139, " continue...", COLOR_RED, COLOR_GREEN);
   if (countdown % 2 == 0){
-    buzzer_set_period(1000);
+    buzzer_set_period(2000);
   }else{
     buzzer_set_period(0);
   }
