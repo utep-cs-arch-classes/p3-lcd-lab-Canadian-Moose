@@ -15,24 +15,6 @@ int countdown = 11;
 int newGamePlus = 1;
 int countdownBool = 0;
 
-void chooseState(void){
-  switch(state){
-    case 0: 
-      play_game();
-      break;
-    case 1:
-      switch_interrupt_handler();
-      you_win();
-      break;
-    case 2:
-      switch_interrupt_handler();
-      game_over();
-      break;
-    default:
-      play_game();
-    }
-}
-
 void newGame(void){
   lives = 3;
   countdown = 11;
