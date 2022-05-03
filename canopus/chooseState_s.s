@@ -1,16 +1,15 @@
 	.arch msp430g2553
 	.p2align 1,0
-	
-	.data
+	.text
+
+	.global chooseState
 	.extern  state
 	
-	.text 
 jump_table:  
 	.word case_0
 	.word case_1
 	.word case_2
 
-	.global chooseState
 chooseState: 
 	mov.w &state, r12
 	add.w r12, r12
