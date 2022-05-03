@@ -4,7 +4,7 @@
 
 	.global chooseState
 	.extern  state
-	
+
 jump_table:  
 	.word case_0
 	.word case_1
@@ -14,7 +14,7 @@ chooseState:
 	mov.w &state, r12
 	add.w r12, r12
 	mov.w jump_table(r12), r0
-	
+
 case_0:
 	CALL play_game
 	jmp end_state
@@ -26,6 +26,6 @@ case_2:
 	CALL switch_interrupt_handler
 	CALL game_over
 	jmp end_state
-	
+
 end_state: 
 pop r0
