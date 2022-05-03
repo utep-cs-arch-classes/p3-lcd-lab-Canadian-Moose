@@ -18,10 +18,12 @@ chooseState:
 case_0:
 	CALL play_game
 	jmp end_state
+
 case_1: 
 	CALL switch_interrupt_handler
 	CALL you_win
 	jmp end_state
+
 case_2:
 	CALL switch_interrupt_handler
 	CALL game_over
