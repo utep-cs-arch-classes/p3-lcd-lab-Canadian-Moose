@@ -16,17 +16,17 @@ chooseState:
 	mov.w jump_table(r12), r0
 
 case_0:
-	CALL play_game
+	CALL #play_game
 	jmp end_state
 
 case_1:
-	CALL switch_interrupt_handler
-	CALL you_win
+	CALL #switch_interrupt_handler
+	CALL #you_win
 	jmp end_state
 
 case_2:
-	CALL switch_interrupt_handler
-	CALL game_over
+	CALL #switch_interrupt_handler
+	CALL #game_over
 	jmp end_state
 
 end_state:
