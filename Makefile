@@ -5,10 +5,13 @@ all:
 	(cd 2_button_demo; make)
 	(cd 3_moving_shapes; make)
 	(cd 4_wake_demo; make)
+	(cd 5-buzzer-demo; make)
+	(cd canopus; make)
 
 doc:
 	rm -rf doxygen_docs
 	doxygen Doxyfile
+
 clean:
 	(cd timerLib; make clean)
 	(cd lcdLib; make clean)
@@ -16,5 +19,7 @@ clean:
 	(cd 2_button_demo; make clean)
 	(cd 3_moving_shapes; make clean)
 	(cd 4_wake_demo; make clean)
+	(cd 5-buzzer-demo; make clean)
+	(cd canopus; make clean)
 	rm -rf lib h
 	rm -rf doxygen_docs/*
