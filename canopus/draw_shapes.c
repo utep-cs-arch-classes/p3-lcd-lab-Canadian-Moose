@@ -307,8 +307,8 @@ int collision_check(void){
 	// return variable
 	collision = 0; 
 
-	if (frogRowStart > row3End){
-		if (frogRowStart < row3Start){
+	if (frogRowStart < row3End){
+		if (frogRowStart > row3Start){
 			heart2(COLOR_PALE_GREEN);
 			if (frogColEnd > lane3colStart1 && frogColEnd < lane3colEnd){
 				collisionTrue();
