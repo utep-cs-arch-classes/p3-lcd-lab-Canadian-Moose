@@ -268,24 +268,44 @@ void draw_moving_shapes(int scaler){
 
 int collision_check(void){
 	// these variables need to be recreated every call 
-	int frogColEnd = frogColStart + 11;
-	int frogRowEnd = frogRowStart + 10;
+	int frogColEnd;
+	int frogRowEnd;
 	
-	int lane1colEnd = lane1colStart + 39;
-	int row1Start = 32;
-	int row1End = 63;
+	int lane1colEnd;
+	int row1Start;
+	int row1End;
 	
-	int lane3colEnd = lane3colStart1 + 39;
-	int row3Start = 86;
-	int row3End = 127;
+	int lane3colEnd;
+	int row3Start;
+	int row3End;
 	
-	int lane2colEnd1 = lane2colStart1 + 26;
-	int lane2colEnd2 = lane2colStart2 + 26;
-	int row2Start = 64;
-	int row2End = 85;
+	int lane2colEnd1;
+	int lane2colEnd2;
+	int row2Start;
+	int row2End;
 	
 	// return variable
-	int collision = 0; 
+	int collision; 
+	
+	// these variables need to be recreated every call 
+	frogColEnd = frogColStart + 11;
+	frogRowEnd = frogRowStart + 10;
+	
+	lane1colEnd = lane1colStart + 39;
+	row1Start = 32;
+	row1End = 63;
+	
+	lane3colEnd = lane3colStart1 + 39;
+	row3Start = 86;
+	row3End = 127;
+	
+	lane2colEnd1 = lane2colStart1 + 26;
+	lane2colEnd2 = lane2colStart2 + 26;
+	row2Start = 64;
+	row2End = 85;
+	
+	// return variable
+	collision = 0; 
 
 	if (frogRowStart > row3End){
 		if (frogRowStart < row3Start){
