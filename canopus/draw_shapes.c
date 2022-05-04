@@ -287,15 +287,17 @@ int collision_check(void){
 	// return variable
 	int collision = 0; 
 
-	if (frogRowStart > row3End && frogRowStart < row3Start){
-		heart2(COLOR_PALE_GREEN);
-		if (frogColEnd > lane3colStart1 && frogColEnd < lane3colEnd){
-			collisionTrue();
-			collision = 1; 
-		}
-		if (frogColStart < lane3colEnd && frogColStart > lane3colStart1){
-			collisionTrue();
-			collision = 1; 
+	if (frogRowStart > row3End){
+		if (frogRowStart < row3Start){
+			heart2(COLOR_PALE_GREEN);
+			if (frogColEnd > lane3colStart1 && frogColEnd < lane3colEnd){
+				collisionTrue();
+				collision = 1; 
+			}
+			if (frogColStart < lane3colEnd && frogColStart > lane3colStart1){
+				collisionTrue();
+				collision = 1; 
+			}
 		}
 	}else if (frogRowStart > row2End && frogRowStart < row2Start){
 		if (frogColEnd > lane2colStart1 && frogColEnd < lane2colEnd1){
