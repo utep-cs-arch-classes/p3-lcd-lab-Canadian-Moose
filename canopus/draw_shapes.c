@@ -350,14 +350,14 @@ void collisionTrue(void){
 void drawWinScreen(void){
   // add the YOU WIN text to the screen
   //drawString8x12(5, 32, "You Win!!", COLOR_PURPLE, COLOR_GREEN);
-	drawChar8x12(5, 32, "Y", COLOR_PURPLE, COLOR_GREEN);
-	drawChar8x12(14, 32, "o", COLOR_PURPLE, COLOR_GREEN);
-	drawChar8x12(23, 32, "u", COLOR_PURPLE, COLOR_GREEN);
-	drawChar8x12(41, 32, "W", COLOR_PURPLE, COLOR_GREEN);
-	drawChar8x12(50, 32, "i", COLOR_PURPLE, COLOR_GREEN);
-	drawChar8x12(59, 32, "n", COLOR_PURPLE, COLOR_GREEN);
-	drawChar8x12(68, 32, "!", COLOR_PURPLE, COLOR_GREEN);
-	drawChar8x12(77, 32, "!", COLOR_PURPLE, COLOR_GREEN);
+	drawChar8x12(5, 32, 'Y', COLOR_PURPLE, COLOR_GREEN);
+	drawChar8x12(14, 32, 'o', COLOR_PURPLE, COLOR_GREEN);
+	drawChar8x12(23, 32, 'u', COLOR_PURPLE, COLOR_GREEN);
+	drawChar8x12(41, 32, 'W', COLOR_PURPLE, COLOR_GREEN);
+	drawChar8x12(50, 32, 'i', COLOR_PURPLE, COLOR_GREEN);
+	drawChar8x12(59, 32, 'n', COLOR_PURPLE, COLOR_GREEN);
+	drawChar8x12(68, 32, '!', COLOR_PURPLE, COLOR_GREEN);
+	drawChar8x12(77, 32, '!', COLOR_PURPLE, COLOR_GREEN);
   // arcade style countdown til reset
   char counter[1];
   drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_GREEN); 
