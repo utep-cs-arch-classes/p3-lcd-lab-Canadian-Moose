@@ -16,9 +16,9 @@ int newGamePlus = 1;
 int countdownBool = 0;
 
 void newGame(void){
+  init_shapes();
   lives = 3;
   countdown = 11;
-  init_shapes();
   switch1_down = 0;
   state = 0;
 }
