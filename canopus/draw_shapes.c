@@ -386,7 +386,7 @@ void drawGameOver(void){
   drawString5x7(5, 5, "GAME OVER", COLOR_RED, COLOR_BLACK);
   // arcade style countdown til reset
   char counter[1];
-  drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_GREEN);
+  drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_BLACK);
   // add press any button to continue text
   drawString5x7(5, 97, "Play again?", COLOR_WHITE, COLOR_BLACK);
   drawString5x7(5, 129, "Press any button to", COLOR_WHITE, COLOR_BLACK);
