@@ -26,7 +26,7 @@ __interrupt_vec(WDT_VECTOR) WDT()
       clearScreen(COLOR_GREEN);
       // change state
       state = 1;
-    }else if (collision == 1){
+    }else if (collision == 1 || lives == 0){
       collision = 0;
       if(lives == 0){
         // prep screen for lose state 
