@@ -20,8 +20,10 @@ Upon reaching the safe zone at the top of the screen, the win state will be trig
 <br>At the end of the countdown the game will reset at a `higher difficulty`, 
 <br>or the player can press `any switch` to end the countdown and reset the game. 
 
-Currently collisions haven't been implemented, so you can't lose! ;)
-<br>(The game over state is implemented but can not be reached currently)
+If the frog's position would result in a `collision` with a vehicle, the player will lose a life and be reset to the starting position. <br>
+The player will begin with 3 lives, and once lives reach zero A "Game Over" message will be displayed and a countdown will begin. 
+<br>At the end of the countdown the game will reset at a the `same difficulty`, 
+<br>or the player can press `any switch` to end the countdown and reset the game. 
 
 ## Credits
 
