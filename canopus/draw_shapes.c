@@ -19,15 +19,21 @@ int frogRowStart = 132;
 int truckColor1 = COLOR_PURPLE;
 int lane1colStart = 56;
 int lane1rowStart = 102;
+int row1Start = 32;
+int row1End = 63;
 //lane 3
 int truckColor3 = COLOR_ORANGE;
 int lane3colStart1 = 10;
 int lane3rowStart = 37;
+int row3Start = 86;
+int row3End = 127;
 //lane 2
 int carColor2 = COLOR_BLUE;
 int lane2colStart1 = 10;
 int lane2colStart2 = 58;
 int lane2rowStart = 76;
+int row2Start = 64;
+int row2End = 85;
 
 u_int background_color = COLOR_GRAY;
 
@@ -268,51 +274,35 @@ void draw_moving_shapes(int scaler){
 
 int collision_check(void){
 	// these variables need to be recreated every call 
+	// frog 
 	int frogColEnd;
 	int frogRowEnd;
-	
+	// vehicles 
 	int lane1colEnd;
-	int row1Start;
-	int row1End;
-	
 	int lane3colEnd;
-	int row3Start;
-	int row3End;
-	
 	int lane2colEnd1;
 	int lane2colEnd2;
-	int row2Start;
-	int row2End;
 	
 	// return variable
 	int collision; 
+	collision = 0; 
 	
 	// these variables need to be recreated every call 
+	// frog 
 	frogColEnd = frogColStart + 11;
 	frogRowEnd = frogRowStart + 10;
-	
+	// vehicles 
 	lane1colEnd = lane1colStart + 39;
-	row1Start = 32;
-	row1End = 63;
-	
 	lane3colEnd = lane3colStart1 + 39;
-	row3Start = 86;
-	row3End = 127;
-	
 	lane2colEnd1 = lane2colStart1 + 26;
 	lane2colEnd2 = lane2colStart2 + 26;
-	row2Start = 64;
-	row2End = 85;
-	
-	// return variable
-	collision = 0; 
 
+	// Check for lane, then compare to vehicle position. 
 	if (frogRowStart < row3End && frogRowStart > row3Start){
 		if (frogColEnd > lane3colStart1 && frogColEnd < lane3colEnd){
 			collisionTrue();
 			collision = 1; 
-		}
-		if (frogColStart < lane3colEnd && frogColStart > lane3colStart1){
+		}else if (frogColStart < lane3colEnd && frogColStart > lane3colStart1){
 			collisionTrue();
 			collision = 1; 
 		}
@@ -320,16 +310,14 @@ int collision_check(void){
 		if (frogColEnd > lane2colStart1 && frogColEnd < lane2colEnd1){
 			collisionTrue(); 
 			collision = 1; 
-		}
-		if (frogColStart < lane2colEnd1 && frogColStart > lane2colStart1){
+		}else if (frogColStart < lane2colEnd1 && frogColStart > lane2colStart1){
 			collisionTrue(); 
 			collision = 1; 
 		}
 		if (frogColEnd > lane2colStart2 && frogColEnd < lane2colEnd2){
 			collisionTrue();
 			collision = 1; 
-		}
-		if (frogColStart < lane2colEnd2 && frogColStart > lane2colStart2){
+		}else if (frogColStart < lane2colEnd2 && frogColStart > lane2colStart2){
 			collisionTrue();
 			collision = 1; 
 		}
@@ -337,8 +325,7 @@ int collision_check(void){
 		if (frogColEnd > lane1colStart && frogColEnd < lane1colEnd){
 			collisionTrue();
 			collision = 1; 
-		}
-		if (frogColStart < lane1colEnd && frogColStart > lane1colStart){
+		}else if (frogColStart < lane1colEnd && frogColStart > lane1colStart){
 			collisionTrue();
 			collision = 1; 
 		}
