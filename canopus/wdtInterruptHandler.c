@@ -17,6 +17,7 @@ __interrupt_vec(WDT_VECTOR) WDT()
   static int second_count = 0;
   
   second_count++;
+  collision = collision_check();
 
   if (second_count >= second_limit) {
     // This will check for the win condition 
@@ -25,7 +26,8 @@ __interrupt_vec(WDT_VECTOR) WDT()
       clearScreen(COLOR_GREEN);
       // change state
       state = 1;
-    }else if (collision_check() == 1){
+    }else if (collision == 1){
+      collision = 0;
       if(lives == 0){
         // prep screen for lose state 
         clearScreen(COLOR_BLACK);
