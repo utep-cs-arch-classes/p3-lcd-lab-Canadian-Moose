@@ -16,11 +16,10 @@ int newGamePlus = 1;
 int countdownBool = 0;
 
 void newGame(void){
-  init_shapes();
   lives = 3;
   countdown = 11;
-  switch1_down = 0;
   state = 0;
+  init_shapes();
 }
 
 // State0 is the default game state
