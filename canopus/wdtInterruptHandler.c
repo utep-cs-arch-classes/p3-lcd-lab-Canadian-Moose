@@ -30,6 +30,7 @@ __interrupt_vec(WDT_VECTOR) WDT()
         // prep screen for lose state 
         clearScreen(COLOR_BLACK);
         state = 2;
+        lives = 3;
       }
     }else{
       // default play game state 
