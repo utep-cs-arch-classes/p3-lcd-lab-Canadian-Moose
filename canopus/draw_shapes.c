@@ -72,12 +72,12 @@ void safeZones(void){
   fillRectangle(endCol, endRow, width, height, color);
 	
   drawChar8x12(5, 15, 'F', COLOR_PURPLE, COLOR_PALE_GREEN);
-  drawChar8x12(14, 15, 'r', COLOR_PURPLE, COLOR_PALE_GREEN);
-  drawChar8x12(23, 15, 'o', COLOR_PURPLE, COLOR_PALE_GREEN);
-  drawChar8x12(32, 15, 'g', COLOR_PURPLE, COLOR_PALE_GREEN);
+  drawChar8x12(17, 15, 'r', COLOR_PURPLE, COLOR_PALE_GREEN);
+  drawChar8x12(29, 15, 'o', COLOR_PURPLE, COLOR_PALE_GREEN);
   drawChar8x12(41, 15, 'g', COLOR_PURPLE, COLOR_PALE_GREEN);
-  drawChar8x12(50, 15, 'e', COLOR_PURPLE, COLOR_PALE_GREEN);
-  drawChar8x12(59, 15, 'r', COLOR_PURPLE, COLOR_PALE_GREEN);
+  drawChar8x12(53, 15, 'g', COLOR_PURPLE, COLOR_PALE_GREEN);
+  drawChar8x12(65, 15, 'e', COLOR_PURPLE, COLOR_PALE_GREEN);
+  drawChar8x12(77, 15, 'r', COLOR_PURPLE, COLOR_PALE_GREEN);
 }
 
 void roads(void){
