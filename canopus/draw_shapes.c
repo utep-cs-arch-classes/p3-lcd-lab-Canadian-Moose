@@ -36,6 +36,7 @@ int row2Start = 64;
 int row2End = 85;
 
 u_int background_color = COLOR_GRAY;
+int collision = 0;
 
 /* global constant variables for wheel sizes/ color */
 const int wheelh1 = 5;
@@ -282,10 +283,6 @@ int collision_check(void){
 	int lane3colEnd;
 	int lane2colEnd1;
 	int lane2colEnd2;
-	
-	// return variable
-	int collision; 
-	collision = 0; 
 	
 	// these variables need to be recreated every call 
 	// frog 
