@@ -349,7 +349,7 @@ void collisionTrue(void){
 
 void drawWinScreen(void){
   // add the YOU WIN text to the screen
-  drawString5x7(5, 32, "You Win!!", COLOR_PURPLE, COLOR_GREEN);
+  drawString8x12(5, 32, "You Win!!", COLOR_PURPLE, COLOR_GREEN);
   // arcade style countdown til reset
   char counter[1];
   drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_GREEN); 
@@ -366,7 +366,7 @@ void drawWinScreen(void){
 
 void drawGameOver(void){
   // add the game over text
-  drawString5x7(5, 5, "GAME OVER", COLOR_RED, COLOR_BLACK);
+  drawString8x12(5, 5, "GAME OVER", COLOR_RED, COLOR_BLACK);
   // arcade style countdown til reset
   char counter[1];
   drawString5x7(32, 64, itoa(countdown,counter,10), COLOR_RED, COLOR_BLACK);
